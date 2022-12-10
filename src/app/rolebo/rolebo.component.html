@@ -1,0 +1,199 @@
+<div class="container">
+
+        <div class="col-xl-6 offset-xl-3" style="margin-top: 5rem;">
+            <p class="text-center"><span  class="h4 mb-4" style="color:#ffd500"><b>BO Portal</b></span> </p>
+           
+        </div>
+        <br>
+        <div class="col-xl-12 offset-xl-3" style="margin-left: 0% !important;">
+                <div class="input-group">
+                        <div class="col-xl-3 offset-xl-3" style="margin-left: 0% !important;">
+                       
+                            </div>
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+                    </div>
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <div class="dropdown" style="padding-left: 25px;">
+                                Filter by Status : 
+                                <select style="background-color: #fff;padding : 14px 10px !important;box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #e6ecef;" name="status" [(ngModel)]="searchText">
+                                        <option value="" selected>All</option>
+                                        <option value="PENDING">PENDING</option>
+                                        <option value="Approve">Approve</option>
+                                        <option value="Discrepant">Discrepant</option>
+                                        <option value="Decline">Decline</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 offset-xl-3" style="margin-left: 0% !important;">
+                       
+                        </div>
+                    <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                        <a style="height: 40px;" class="btn btn-default btn-sm" href="branchOfficerReg">Add new LAF</a>
+                    </div>
+                </div>
+        </div>
+    
+    </div>
+    <div class="loader" *ngIf="!data.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column3" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession</th>
+                                <th class="column4" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View/Update LAF</th>
+                                <th class="column5" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current Status</th>
+                                <th class="column6" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Assign BS</th>
+                                <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of data.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING' " class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br> <b>Reason</b> : <br> {{event.reason}}</td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'"  class="column6">
+                                    <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                            <option value="false">None</option>
+                                            <option value="true">Assign</option>
+                                            <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'"  class="column6">
+                                    <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                            <option value="false">None</option>
+                                            <option value="true">Assign</option>
+                                            <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'"  class="column6">
+                                    <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                            <option value="false">None</option>
+                                            <option value="true">Assign</option>
+                                            <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING'"  class="column6">
+                                    <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                            <option value="false">None</option>
+                                            <option value="true">Assign</option>
+                                            <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column6">
+                                    <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                            <option value="false">None</option>
+                                            <option value="true">Assign</option>
+                                            <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column6">
+                                        <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                <td class="column12">{{event.createdAt}}</td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <!-- <br>
+    <p class="text-center"><span  class="h4 mb-4" style="color:#ffd500"><b>BO Portal</b></span> </p>
+    <br>
+    <br>
+    <div class="row">
+    <div class="col-md-4 col-lg-3 col-xl-3 col-sm-12"></div>
+    <div class="col-md-3 col-lg-2 col-xl-2 col-sm-12"><label><b>Search</b> :</label></div>
+    <div class="col-md-3 col-lg-2 col-xl-2 col-sm-12">
+            <input class="form-control" type="text" name="search" style="margin-top: -10px;border : 1px solid #f3cb00;" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+    </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 col-sm-12"><a style="height: 50px; margin-top: -10px;" class="btn btn-default" (click)="submit()">Search</a></div>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr style="text-align: center;">
+                <th>Full Name</th>
+                <th>CNIC</th>
+                <th>Profession</th>
+                <th>View Form</th>
+                <th>Current Status</th>
+                <th>Assign VO</th>
+                <th>CMO Feedback</th>
+                <th>VO Feedback</th>
+                <th>Approve / Reject</th>
+                <th>Loan Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="text-align: center;" *ngFor="let event of data.data | filter:searchText">
+                <td>{{event.fullname}}</td>
+                <td>{{event.cnic}}</td>
+                <td>{{event.profession}}</td>
+                <td>
+                    <a href="lafForm/{{event._id}}" class="btn btn-outline-secondary">View Form</a>
+                </td>
+                <td>{{event.loanStatus}}</td>
+                <td>
+                    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+                        <select #mySelect (change)='onOptionsSelected(event._id,mySelect.value)' style="border: 2px solid #ffd500;background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  >
+                            <option value="false">None</option>
+                            <option value="true">Assign</option>
+                            <option value="false">Un Assign</option>
+                        </select>
+                    </div>
+                </td>
+                <td><a href="cmofeedback/{{event._id}}" class="btn btn-outline-secondary">View</a></td>
+                <td><a href="vofeedback/{{event._id}}" class="btn btn-outline-secondary">View</a></td>
+                <td>
+                    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+                        <select #mySelect1 (change)='onOptionsSelected1(event._id,mySelect1.value)' style="border: 2px solid #ffd500;background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  >
+                            <option value="Pending">Pending</option>
+                            <option value="Approve">Approve</option>
+                            <option value="Reject">Reject</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <a href="addLoanSummary/{{event._id}}" class="btn btn-outline-secondary">Add Loan Summary</a>
+                </td>
+                </tr>
+        </tbody>
+    </table>
+    <br> -->

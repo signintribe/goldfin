@@ -1,0 +1,310 @@
+<!-- <div class="container">
+
+        <div class="col-xl-6 offset-xl-3" style="margin-top: 5rem;">
+            <p class="text-center"><span  class="h4 mb-4" style="color:#ffd500"><b>CSO Portal</b></span> </p>
+           
+            <div class="input-group">
+                <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+            </div>
+
+            
+        </div>
+    </div> -->
+
+    <div class="container">
+
+            <div class="col-xl-6 offset-xl-3" style="margin-top: 5rem;">
+                <p class="text-center"><span  class="h4 mb-4" style="color:#ffd500"><b>CSO Portal</b></span> </p>
+               
+            </div>
+            <br>
+            <div class="col-xl-12 offset-xl-3" style="margin-left: 0% !important;">
+                    <div class="input-group">
+                        <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                            <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+                        </div>
+                        <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                            <div class="dropdown" style="padding-left: 25px;">
+                                    Filter by Status : 
+                                    <select style="background-color: #fff;padding : 14px 10px !important;box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #e6ecef;" name="status" [(ngModel)]="searchText">
+                                            <option value="" selected>All</option>
+                                            <option value="PENDING">PENDING</option>
+                                            <option value="Approve">Approve</option>
+                                            <option value="Discrepant">Discrepant</option>
+                                            <option value="Decline">Decline</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                                <div class="dropdown" style="padding-left: 25px;">
+                                        Date : 
+                                        <input style="padding : 14px 10px !important;box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #e6ecef;" type="date" name="date" [(ngModel)]="searchText" placeholder="Date"  />
+                                </div>
+                        </div> -->
+                    </div>
+            </div>
+    
+        </div>
+        <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                <a style="height: 40px;" class="btn btn-default btn-sm"  (click)="directCSO = false">Non Verified</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a style="height: 40px" class="btn btn-default btn-sm"  (click)="directCSO = true">Verified</a>
+        </div>
+
+<div *ngIf="!directCSO">
+        <div class="loader" *ngIf="!data.data"></div>
+        <div class="limiter">
+            <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                            <ng-container *ngIf="( data.data | LockFilter : searchText) as events">
+                                   
+                    <div class="wrap-table100">
+                    <div class="table100">
+                            
+                        <table>
+                            <thead style="position:sticky;">
+                                <tr class="table100-head">
+                                    <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                    <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                    <th class="column3" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession</th>
+                                    <th class="column5" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current Status</th>
+                                    <th class="column6" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Status Message</th>
+                                    <th class="column7" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">LAF Form</th>
+                                        <th class="column8" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Forward to BS</th>
+                                    <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited Date</th>
+                                    <th class="column13" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Print</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+        
+                                <tr *ngFor="let event of data.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                    <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                    <td class="column2">{{event.cnic}}</td>
+                                    <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                    
+                                   
+                                    <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                    <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br> <b>Reason</b> : <br> {{event.reason}}</td>
+                                    <td class="column6">{{event.loanmessage}} &nbsp;</td>
+                                    
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'" class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Decline'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'" class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING' " class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+    
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'" class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Decline'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                   <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+    
+
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING'"  class="column8">
+                                        <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column8">
+                                        <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column8">
+                                            <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                    <option value="false">None</option>
+                                                    <option value="true">Assign</option>
+                                                    <option value="false">Un Assign</option>
+                                            </select>
+                                        </td>
+                                   <td class="column12">{{event.createdAt}}</td>
+                                   <td class="column13"><a href="branch/{{event._id}} " target='_blank' class="btn">Print</a></td>
+                                  
+                            </tr>
+        
+                                
+                                
+        
+                            </tbody>
+                        </table>
+                        <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        <div *ngIf="events.length === 0">
+                                    <table class="table">
+                                            <tr style="text-align: center;">
+                                                    <td>&nbsp;</td>
+                                                    <td><h3>No User Found</h3></td>
+                                            </tr>
+                                    </table>
+                                
+                                
+                                  
+                            </div>  
+                    </div>
+                </div>
+            </ng-container> 
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+    <br>
+    <br>
+    <br>
+</div>
+<div *ngIf="directCSO">
+        <div class="loader" *ngIf="!data.data"></div>
+        <div class="limiter">
+            <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                            <ng-container *ngIf="( data20.data | LockFilter : searchText) as events">
+                                   
+                    <div class="wrap-table100">
+                    <div class="table100">
+                            
+                        <table>
+                            <thead style="position:sticky;">
+                                <tr class="table100-head">
+                                    <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                    <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                    <th class="column3" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession</th>
+                                    <th class="column5" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current Status</th>
+                                    <th class="column6" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Status Message</th>
+                                    <th class="column7" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">LAF Form</th>
+                                    <th class="column8" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Forward to BS</th>
+                                    <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited Date</th>
+                                    <th class="column13" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Print</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+        
+                                <tr *ngFor="let event of data20.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                    
+                                    <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp; {{event.fullname}}</td>
+                                    <td class="column2">{{event.cnic}}</td>
+                                    <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                    
+                                    <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                    <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br> <b>Reason</b> : <br> {{event.reason}}</td>
+                                    <td class="column6">{{event.loanmessage}} &nbsp;</td>
+                               
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'" class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Decline'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING' " class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+    
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'" class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Decline'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING' " class="column7"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve'" class="column7"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+    
+                                    
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'"  class="column8">
+                                        <select #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING'"  class="column8">
+                                        <select  #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column8">
+                                        <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                <option value="false">None</option>
+                                                <option value="true">Assign</option>
+                                                <option value="false">Un Assign</option>
+                                        </select>
+                                    </td>
+                                    <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"  class="column8">
+                                            <select disabled #mySelect  [(ngModel)]="event.bo" (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                                    <option value="false">None</option>
+                                                    <option value="true">Assign</option>
+                                                    <option value="false">Un Assign</option>
+                                            </select>
+                                        </td>
+
+                                   <td class="column12">{{event.createdAt}}</td>
+                                   <td class="column13"><a href="branch/{{event._id}} " target='_blank' class="btn">Print</a></td>
+                                  
+                            </tr>
+        
+                                
+                                
+        
+                            </tbody>
+                        </table>
+                        <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        <div *ngIf="events.length === 0">
+                                    <table class="table">
+                                            <tr style="text-align: center;">
+                                                    <td>&nbsp;</td>
+                                                    <td><h3>No User Found</h3></td>
+                                            </tr>
+                                    </table>
+                                
+                                
+                                  
+                            </div>  
+                    </div>
+                </div>
+            </ng-container> 
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+    <br>
+    <br>
+    <br>
+</div>
+
+
+

@@ -1,0 +1,187 @@
+
+<div class="container">
+	<div class="col-md-6 col-lg-6 col-xl-6 col-sm-10 col-md-8 col-12 offset-xl-3 bg-white offset-md-2 offset-lg-3 offset-sm-1 pb-5" style="padding: 23px;margin-top: 120px;  background: #FFFFDD!important;">
+		<h2 style="padding: 20px 0px;">We will send you the 6 digit OTP code to your phone number</h2>
+		<form action="">
+			<div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/phone.svg" style="width: 30px;">
+					</div>
+					<input class="form-control" name="phone" (keyup)="onKeyMobile($event)" [(ngModel)]="data.phone" maxlength="15" placeholder="Mobile Number : +92-XXX-XXXXXXX" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+			</div>
+			
+			
+			<div class="sign-button text-center">
+				<button class="btn btn mb-3" (click)="submit()" style="background:#F3CB00; padding: 10px 51px;">Reset My Password</button>
+                                <br>
+                                <a class="btn btn mb-3" style="color:black;background:#F3CB00; padding: 10px 51px; margin-right: 5px;" href="login">Login</a>
+			</div>
+                        <div class="row">
+                                <div class="col-lg-2">
+                                </div>
+                                <div class="col-lg-8">
+                                    <p style="color:green;font-size:15px;">{{sucess}}</p>
+                                </div>
+                                <div class="col-lg-2">
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-lg-2">
+                                </div>
+                                <div class="col-lg-8">
+                                   <p style="color:red;font-size:15px;">{{error}}</p>
+                                </div>
+                                <div class="col-lg-2">
+                                </div>
+                                </div>
+			
+		</form>
+        </div>
+      
+</div>
+<div *ngIf="codeOKAY">
+        <div class="container">
+                <div class="col-md-6 col-lg-6 col-xl-6 col-sm-10 col-md-8 col-12 offset-xl-3 bg-white offset-md-2 offset-lg-3 offset-sm-1 pb-5" style="padding: 23px;margin-top: 30px;  background: #FFFFDD!important;">
+                        <h2 style="padding: 20px 0px;">Enter Verification Code</h2>
+                        <form action="">
+                                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                                        <div class="input-group">
+                                                <div class="input-group-addon">
+                                                <img src="assets/images/icon/verify-code.svg" style="width: 30px;">
+                                                </div>
+                                                <input class="form-control" type="number" [(ngModel)]="data.verifyCode" name="verifyCode" placeholder="Verification Code" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                        </div>
+                                </div>
+                                
+                                
+                                <div class="sign-button text-center">
+                                        <button (click)="submit123()" class="btn btn mb-3" style="background:#F3CB00; padding: 10px 51px;">Verify Code</button>
+                                        
+                                </div>
+                                
+                                <div class="row">
+                                        <div class="col-lg-2">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p style="color:green;font-size:15px;">{{sucess1}}</p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-lg-2">
+                                        </div>
+                                        <div class="col-lg-8">
+                                                <p style="color:red;font-size:15px;">{{error1}}</p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                        </div>
+                                </div>
+                                
+                        </form>
+
+                </div>
+        </div>
+</div>
+<br>
+<br>
+<!-- 
+<br><br>
+
+
+<div class="container">
+        <br><br> 
+        <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">We will send you the 6 digit OTP code to your phone number</p>
+       
+                <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                <div style="padding-top: 15px; width: 4%;">
+                                <img style="width: 25px;" src="assets/images/icon/phone.svg" />
+                </div>
+                <input type="text" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="phone" class="form-control mb-4" (keyup)="onKeyMobile($event)" [(ngModel)]="data.phone" maxlength="15" placeholder="Mobile Number : +92-XXX-XXXXXXX" >
+                </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-3">
+                        <button (click)="submit()" class="btn btn-default" type="submit">Forgot Password</button>
+                </div>
+                <div class="col-lg-2">
+                                <a class="btn btn-default" href="login">Login</a>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+            <br>
+                <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8">
+                    <p style="color:green;font-size:15px;">{{sucess}}</p>
+                </div>
+                <div class="col-lg-2">
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8">
+                   <p style="color:red;font-size:15px;">{{error}}</p>
+                </div>
+                <div class="col-lg-2">
+                </div>
+                </div>
+        <br><br>
+        <div *ngIf="codeOKAY">
+                <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-8">
+                                <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                                        <input type="number" [(ngModel)]="data.verifyCode" name="verifyCode" placeholder="Verification Code" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" class="form-control mb-4" >
+                                </div>
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                    <br>
+                <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-2">
+                                <button (click)="submit123()"  class="btn btn-default" type="submit">Verify Code</button>
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-8">
+                                <p style="color:green;font-size:15px;">{{sucess1}}</p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-2">
+                            </div>
+                            <div class="col-lg-8">
+                                    <p style="color:red;font-size:15px;">{{error1}}</p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                    </div>
+        </div>
+
+       
+        </form>
+</div>
+<br><br> -->

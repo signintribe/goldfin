@@ -1,0 +1,164 @@
+<div>
+
+        <div class="container" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+            
+          <select class="no-print" (change)="selectChangeHandler($event)">
+            <option value="goldfin">Goldfin</option>
+            <option value="alfalah">Goldfin & Bank Alfalah</option>
+            <option value="Tez">Tez Financial</option>
+        </select>
+        <span *ngIf= "selectedDay === 'goldfin'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+        </span>  
+        <span *ngIf= "selectedDay === 'alfalah'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+      <span *ngIf= "selectedDay === 'Tez'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span> 
+          <br>
+        <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Collateral Assessment</h4></div><br>
+        <form action="#">
+          
+          <div class="row">
+          <div class="col-4">
+            <label for="fullname"><b>Customer Name</b></label>
+            <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data3.fullname">
+          </div>
+          <div class="col-4">
+            <label for="cnic"><b>CNIC</b></label>
+            <input type="text" disabled id="cnic" name="cnic" [(ngModel)]="data3.cnic">
+          </div>
+          <div class="col-4">
+            <label for="shroffName"><b>SHROFF NAME</b></label>
+            <textarea rows="1" disabled id="shroffName" name="shroffName" [(ngModel)]="data1[0].shroffName"></textarea>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-4">
+            <label for="shroffCertificateNumber"><b>SHROFF CERTIFICATE NUMBER</b></label>
+            <textarea rows="1" disabled id="shroffCertificateNumber" name="shroffCertificateNumber" [(ngModel)]="data1[0].shroffCertificateNumber"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="natureOfGold"><b>NATURE OF GOLD</b></label>
+            <textarea rows="1" disabled id="natureOfGold" name="natureOfGold" [(ngModel)]="data1[0].natureOfGold"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="detailsGold0"><b>1</b></label>
+            <textarea rows="2" disabled id="detailsGold0" name="detailsGold0" [(ngModel)]="data1[0].detailsGold[0]"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="detailsGold1"><b>2</b></label>
+            <textarea rows="2" disabled id="detailsGold1" name="detailsGold1" [(ngModel)]="data1[0].detailsGold[1]"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="detailsGold2"><b>3</b></label>
+            <textarea rows="2" disabled id="detailsGold2" name="detailsGold2" [(ngModel)]="data1[0].detailsGold[2]"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="detailsGold3"><b>4</b></label>
+            <textarea rows="2" disabled id="detailsGold3" name="detailsGold3" [(ngModel)]="data1[0].detailsGold[3]"></textarea>
+          </div>
+        </div>
+       <div class="row">
+          <div class="col-4">
+              <label for="detailsGold4"><b>5</b></label>
+              <textarea rows="2" disabled id="detailsGold4" name="detailsGold4" [(ngModel)]="data1[0].detailsGold[4]"></textarea>
+            </div>
+          <div class="col-4">
+            <label for="grossWeight"><b>GROSS WEIGHT (GRAMS) AS PER SHROFF CERTIFICATE</b></label>
+            <textarea rows="1" disabled id="grossWeight" name="grossWeight" [(ngModel)]="data1[0].grossWeight"></textarea>
+            </div>
+            <div class="col-4">
+              <label for="netWeight"><b>NET WEIGHT (GRAMS) AS PER SHROFF CERTIFICATE</b></label>
+              <textarea rows="1" disabled id="netWeight" name="netWeight" [(ngModel)]="data1[0].netWeight"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <label for="marketValue"><b>MARKET VALUE AS PER SHROFF CERTIFICATE</b></label>
+            <textarea rows="1" disabled id="marketValue" name="marketValue" [(ngModel)]="data1[0].marketValue"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="securedPacket1Number"><b>SECURED PACKET (1) NUMBER</b></label>
+            <textarea rows="1" disabled id="securedPacket1Number" name="securedPacket1Number" [(ngModel)]="data1[0].securedPacket1Number"></textarea>
+          </div>
+          <div class="col-4">
+            <label for="securedPacket2Number"><b>SECURED PACKET (2) NUMBER</b></label>
+            <textarea rows="1" disabled id="securedPacket2Number" name="securedPacket2Number" [(ngModel)]="data1[0].securedPacket2Number"></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="grossWeightCMO"><b>GROSS WEIGHT (GRAMS) BY CMO</b></label>
+            <textarea rows="1" disabled id="grossWeightCMO" name="grossWeightCMO" [(ngModel)]="data1[0].grossWeightCMO"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="barCodeNumber"><b>BAR CODE NUMBER</b></label>
+            <textarea rows="1" disabled id="barCodeNumber" name="barCodeNumber" [(ngModel)]="data1[0].barCodeNumber"></textarea>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-25">
+            <label for="gender"><b>CMO NAME</b></label>
+          </div>
+          <div class="col-75">
+                <textarea rows="3" disabled id="purpose" name="purpose" [(ngModel)]="data1[0].name"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="gender"><b>USER CODE</b></label>
+          </div>
+          <div class="col-75">
+                <textarea rows="3" disabled id="purpose" name="purpose" [(ngModel)]="data1[0].userCode"></textarea>
+          </div>
+        </div>
+         -->
+         <br>
+         <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Pictures</h4></div><br>
+  
+         <div class="row">
+           <div class="col-6">
+             <label for="residenceUtilityBills"><b>Picture 1</b></label>
+             <img style="margin-left: 20px; width: 420px; height: 220px;" src="{{baseURL}}/{{data1[0].picture1}}">
+           </div>
+           <div class="col-6">
+            <label for="currentSalarySlip"><b>Picture 2</b></label>
+            <img style="margin-left: 20px; width: 420px; height: 220px;" src="{{baseURL}}/{{data1[0].picture2}}">
+           </div>
+         </div>
+         <br>
+         <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Office Work (ONLY)</h4></div><br>
+        
+         <div class="row">
+         <div class="col-6">
+           <label for="csoName"><b>CMO Name</b></label>
+           <input type="text" disabled id="csoName" name="csoName" [(ngModel)]="data1[0].name">
+         </div>
+         <div class="col-6">
+           <label for="userCode"><b>CMO Code</b></label>
+           <input type="text" disabled id="userCode" name="userCode" [(ngModel)]="data1[0].userCode">
+         </div>
+         </div>
+ 
+         <div class="row">
+         <div class="col-25">
+           <label for="today1"><b>Date</b></label>
+         </div>
+         <div class="col-75">
+           <input type="text" disabled id="today1" name="today1" [(ngModel)]="today1">
+         </div>
+         </div>
+
+        <br><br><br><br><br>
+        </form>
+        </div>
+        
+        </div>

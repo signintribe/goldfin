@@ -1,0 +1,126 @@
+<div class="page-header4">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="wrapper-content bg-white">
+        <div class="section-scroll pinside60" id="section-about">
+          <h1 translate>UN84</h1>
+          <p class="lead"><b translate>UN85 <span>{{goldrate1}}</span></b></p>
+          <p class="lead"><b translate>UN86 <span>{{goldrate}}</span></b></p>
+          <hr>
+          <p style="color: #ff0018" translate>UN87</p>
+          <hr>
+          <h3 style="color: #F3CB00"><b translate>UN88</b></h3>
+          <hr>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <p translate>UN89</p>
+              <input min="50000" #box (keyup.enter)="update(box.value)" (blur)="update(box.value)" style="border-width: 0 0 1px 0; font-size: 1rem;" type="number" name="amount" placeholder="Enter loan amount"/>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <p translate>Gold purity</p>
+              <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url(https://rupeek.com/images/dropdown.svg); background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+                <select name="goldtype" style="border-width: 0 0 1px 0; font-size: 1rem;" ng-reflect-name="goldtype" class="ng-valid ng-dirty ng-touched" ng-reflect-model="24">
+                  <option value="24" selected="" ng-reflect-value="24"> 24KT </option>
+                </select>
+              </div>
+            </div>
+          </div><hr>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p><b translate>UN90</b></p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p class="lead"><b>{{valueweight}}</b></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p><b translate>UN91</b></p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p class="lead"><b>{{valueweight1}}</b></p>
+            </div>
+          </div>
+          <hr>
+          <h3 style="color: #F3CB00"><b translate>UN92</b></h3>
+          <hr>
+          <div class="row">
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <p translate>UN93</p>
+              <input #box1 (keyup.enter)="update1(box1.value)" (blur)="update1(box1.value)" style="border-width: 0 0 1px 0; font-size: 1rem;" type="number" name="gamount" placeholder="Enter gold amount"/>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <p translate></p>
+
+              <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url(https://rupeek.com/images/dropdown.svg); background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+                <select name="goldtype" style="border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="goldvalue.value">
+                  <option value="1">Gram</option>
+                  <option value="2">Tola</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <p translate>UN95</p>
+              <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url(https://rupeek.com/images/dropdown.svg); background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+                <select name="goldtype" style="border-width: 0 0 1px 0; font-size: 1rem;" ng-reflect-name="goldtype" class="ng-valid ng-dirty ng-touched" ng-reflect-model="24">
+                  <option value="24" selected="" ng-reflect-value="24"> 24KT </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p style="color: red;" *ngIf="test1"><b translate>UN96</b></p>
+              <p><b translate>UN97</b></p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+              <p class="lead"><b>{{valueweight2}}</b></p>
+            </div>
+          </div>
+          <br>
+          <hr>
+
+          <a style="" href="laf" class="btn btn-default" translate>UN98</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <a style="" href="/contactus" class="btn btn-default" translate>UN99</a>
+          <br><br>
+          <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+              <p style="border: 1px solid #febf00;" translate>UN100</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="wrapper-content bg-white">
+        <div class="section-scroll pinside60">
+          <h3 style="color: #F3CB00" translate>UN101</h3>
+          <p translate>UN102</p>
+          <p translate>UN103</p>
+          <p translate>UN104</p>
+          <p translate>UN105</p>
+          <p translate>UN106</p>
+          <p translate>UN107</p>
+          <p translate>UN108</p>
+          <hr>
+          <p translate>UN109</p>
+          <p translate>UN110</p>
+          <p translate>UN111</p>
+          <p translate>UN112</p>
+          <p translate>UN113</p>
+          <p translate>UN114</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

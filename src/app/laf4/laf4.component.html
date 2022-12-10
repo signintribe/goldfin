@@ -1,0 +1,304 @@
+<div class="container" style="margin-top: 80px; margin-bottom: 120px;">
+        <h1 class="text-center mb-2" style="margin-top: 67px;"><b style="color:#FFD500;">Loan </b> Application Form (LAF)</h1>
+        <h3 class="text-center mb-5" style="margin-top: 67px;color:#FFD500; font-weight: bold;"> Documents Uploading</h3>
+        
+        <div *ngIf="recommend">
+                <form action="">
+                        <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                
+                    <div class="col-lg-12 col-xl-12 pb-3 input-container">
+                    </div>
+                 
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 36px;">Front CNIC</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image" (change)="uploadImageCNIC1($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 38px;">Back CNIC</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image1" (change)="uploadImageCNIC2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px px;">Residence Utility Bills</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image2" (change)="uploadImageResidenceUtilityBills($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 11px;">Current Salary Slip</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image3" (change)="uploadImageCurrentSalarySlip($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 26px;">Job Certificate</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image4" (change)="uploadImageJobCertificate($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                    
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Experience Letter</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image5" (change)="uploadImageJobCertificate2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                         <button class="btn btn-lg" (click)="submitform()" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">Submit</button>
+                    </div>
+                
+                
+                      </div>
+                   </form>
+        </div>
+
+        <div *ngIf="recommend2">
+                <form action="">
+                        <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                
+                    <div class="col-lg-12 col-xl-12 pb-3 input-container">
+                    </div>
+                 
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 36px;">Front CNIC</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image11" (change)="uploadImageCNIC11($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 38px;">Back CNIC</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image22" (change)="uploadImageCNIC22($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px px;">Residence Utility Bills</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image33" (change)="uploadImageResidenceUtilityBills11($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;" >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 11px;">Business Utility Bills</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image44" (change)="uploadImageResidenceBusinessBills($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 26px;">Proof of Business</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image55" (change)="uploadImageProofofBusiness($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+                    
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon addons1" style="width:280px;"  >
+                               <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Proof of Business Income</p>
+                            </div>
+                            <input class="form-control" type="file" type="file" name="image66" (change)="uploadImageProofofBusinessIncome($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                        </div>
+                    </div>
+
+
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <label class="control-label " for="email">
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-addon addons1" style="width:280px;" >
+                                   <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">SECP registration, if registered</p>
+                                </div>
+                                <input class="form-control" type="file" type="file" name="image77" (change)="uploadImageSECP($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                            </div>
+                    </div>
+                    
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <label class="control-label " for="email">
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-addon addons1" style="width:280px;"  >
+                                   <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">NTN number, if filler</p>
+                                </div>
+                                <input class="form-control" type="file" type="file" name="image88" (change)="uploadImageNTN($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                            </div>
+                    </div>
+
+                
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                         <button class="btn btn-lg" (click)="submitform12()" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">Submit</button>
+                    </div>
+                
+                
+                      </div>
+                   </form>
+        </div>
+        <br><br>
+        <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+</div>
+
+
+
+<!-- 
+<div class="container">
+        <br><br>  
+       <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">Loan Application Form (LAF)</p>
+            <br>
+            <p><span  class="h5 mb-4" style="color:#ffd500"><b>Documents Uploading</b></span></p>
+           <br>
+           <br>
+            <div *ngIf="recommend">
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Documents</p>
+                                        <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >File</p>
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Front CNIC</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image" (change)="uploadImageCNIC1($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Back CNIC</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image1" (change)="uploadImageCNIC2($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Residence Utility Bills</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image2" (change)="uploadImageResidenceUtilityBills($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Current Salary Slip</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image3" (change)="uploadImageCurrentSalarySlip($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Job Certificate</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image4" (change)="uploadImageJobCertificate($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Experience Letter</p>
+                                        <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image5" (change)="uploadImageJobCertificate2($event)" class="form-control mb-4" placeholder="">
+                        </div>
+                        
+               
+                    <a class="btn btn-default" (click)="submitform()">Submit</a>
+                    
+            </div>
+            <br>
+            <div *ngIf="recommend2">
+                 
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                            <p style="height: calc(1.5em + .75rem + 7px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Documents</p>
+                            <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >File</p>
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Front CNIC</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image11" (change)="uploadImageCNIC11($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Back CNIC</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image22" (change)="uploadImageCNIC22($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Residence Utility Bills</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image33" (change)="uploadImageResidenceUtilityBills11($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Business Utility Bills</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image44" (change)="uploadImageResidenceBusinessBills($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Proof of Business</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image55" (change)="uploadImageProofofBusiness($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Proof of Business Income</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image66" (change)="uploadImageProofofBusinessIncome($event)" class="form-control mb-4" placeholder="">
+                    </div>
+					
+					<div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">SECP registration, if registered</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image77" (change)="uploadImageSECP($event)" class="form-control mb-4" placeholder="">
+                    </div>
+					
+					<div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">NTN number, if filler</p>
+                                    <input style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;"  type="file" name="image88" (change)="uploadImageNTN($event)" class="form-control mb-4" placeholder="">
+                    </div>
+                    <br><br>
+                    <a class="btn btn-default" (click)="submitform12()">Submit</a>
+
+
+
+                    
+            </div>
+            
+           <br><br>
+           <br><br>
+           <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+
+    
+       
+       </form>
+       <br><br> 
+       </div> -->

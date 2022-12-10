@@ -1,0 +1,281 @@
+<div class="sidenav">
+    <a (click)="getUsers()" style="cursor: pointer;">Customers</a>
+    <a (click)="getRoleUsers()" style="cursor: pointer;">System Users</a>
+    <a (click)="getSystemUsers()" style="cursor: pointer;">Super Admin's</a>
+    <a (click)="goldRate()" style="cursor: pointer;">Gold Rate Archive</a>
+    <a (click)="archivingFiles()" style="cursor: pointer;">Archiving of files</a>
+  </div>
+  
+  <div class="main" *ngIf="usersSelect">
+    <div class="loader" *ngIf="!usersData.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+                </div>
+                <br>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column3" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession</th>
+                                <th class="column4" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View/Update LAF</th>
+                                <th class="column5" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current Status</th>
+                                <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited Date</th>
+                                <th class="column10" style="border-right: 1px solid rgb(255 255 255 / 39%); padding-right: px;">Loan Status</th>
+                                <th class="column11" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of usersData.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING' " class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br> <b>Reason</b> : <br> {{event.reason}}</td>
+                                <td class="column12">{{event.createdAt.substr(0, 10)}}</td>
+
+                                <td class="column10">
+                                    <select #mySelect1 [(ngModel)]="event.loanStatus" (change)='onOptionsSelected1(event._id,mySelect1.value)'>
+                                            <option value="PENDING">Pending</option>
+                                            <option value="Decline">Decline</option>
+                                            <option value="Approve">Approve</option>
+                                            <option value="Discrepant">Discrepant</option>
+                                    </select>
+                                </td>
+                                <td class="column11"> <a style="height: 40px;" class="btn btn-default btn-sm" (click)="deleteRoleUser(event)">Delete</a></td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+ 
+  <div class="main" *ngIf="roleUsersSelect">
+    <div class="loader" *ngIf="!roleUsersData.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+                    </div>
+                <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                        <a style="height: 40px;" class="btn btn-default btn-sm" href="addSystemUser">Add System User</a>
+                </div>
+                <br>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">User Registration Date</th>
+                                <th class="column11" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of roleUsersData.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column12">{{event.createdAt.substr(0, 10)}}</td>
+                                <td class="column11"> <a style="height: 40px;" class="btn btn-default btn-sm" (click)="deleteRoleUser(event)">Delete</a></td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="main" *ngIf="systemUsersSelect">
+    <div class="loader" *ngIf="!systemUsersData.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC" style="padding: 23px 10px;">
+                    </div>
+                <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                        <a style="height: 40px;" class="btn btn-default btn-sm" href="addSuperAdmin">Add Super Admin</a>
+                </div>
+                <br>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">User Registration Date</th>
+                                <th class="column11" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of systemUsersData.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                              
+                                <td class="column12">{{event.createdAt.substr(0, 10)}}</td>
+                                <td class="column11"> <a style="height: 40px;" class="btn btn-default btn-sm" (click)="deleteRoleUser(event)">Delete</a></td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="main" *ngIf="goldRateSelect">
+    <div class="loader" *ngIf="!goldRateData"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+                <div class="row">
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search Date" style="padding: 23px 10px;">
+                    </div>
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                        <input name="search" [(ngModel)]="searchText" type="date" placeholder="Search Date YYYY-MM-DD | CNIC" style="padding: 15px 10px; border: 2px solid #eee;">
+                    </div>
+                    <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                            <a style="height: 40px;" class="btn btn-default btn-sm" href="goldRate">Add New Rate</a>
+                    </div>
+                </div>
+                <br>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Date</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Type</th>
+                            <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Gold Rate</th>
+                                <th class="column11" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Admin ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of goldRateData | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.updatedAt.substr(0, 10)}}</td>
+                                <td class="column2">{{event.type}}</td>
+                              
+                                <td class="column12">{{event.goldrate}}</td>
+                                <td class="column11">{{event.adminId}}</td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="main" *ngIf="archivingOfFiles">
+    <div class="loader" *ngIf="!archivingOfFilesData.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5"  style="overflow-x:auto; padding: 19px 30px; " >
+               <div class="row">
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                            <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search Date YYYY-MM-DD | CNIC" style="padding: 23px 10px;">
+                    </div>
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                            <input name="search" [(ngModel)]="searchText" type="date" placeholder="Search Date YYYY-MM-DD | CNIC" style="padding: 15px 10px; border: 2px solid #eee;">
+                    </div>
+                    <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                            <button (click)="resetSearch()" class="btn btn-default btn-sm">Reset</button>
+                    </div>
+               </div>
+                <br>
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name</th>
+                                <th class="column2" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column3" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession</th>
+                                <th class="column4" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View/Update LAF</th>
+                                <th class="column5" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current Status</th>
+                                <th class="column12" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited Date</th>
+                                <th class="column11" style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let event of archivingOfFilesData.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true"/> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'PENDING'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'PENDING' " class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'true' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.bo == 'false' && event.loanStatus == 'Discrepant'" class="column4"><a href="lafForm/{{event._id}}" class="btn">View/Update</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Decline'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                               <td *ngIf="event.bo == 'false' && event.loanStatus == 'Approve'" class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br> <b>Reason</b> : <br> {{event.reason}}</td>
+                                <td class="column12">{{event.createdAt0.substr(0, 10)}}</td>
+                                <td class="column11"> <a style="height: 40px;" class="btn btn-default btn-sm" (click)="deleteRoleUser(event)">Delete</a></td>
+                            </tr>
+    
+                            
+                            
+    
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>

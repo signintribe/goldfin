@@ -1,0 +1,159 @@
+<div>
+
+        <div class="container" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+          <select class="no-print" (change)="selectChangeHandler($event)">
+            <option value="goldfin">Goldfin</option>
+            <option value="alfalah">Goldfin & Bank Alfalah</option>
+            <option value="Tez">Tez Financial</option>
+        </select>
+        <span *ngIf= "selectedDay === 'goldfin'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+        </span>  
+        <span *ngIf= "selectedDay === 'alfalah'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+      <span *ngIf= "selectedDay === 'Tez'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span> 
+          <br>
+        <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Verification Form</h4></div><br>
+        <form action="#">
+          
+          <div class="row">
+          <div class="col-6">
+            <label for="fullname"><b>Customer Name</b></label>
+            <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data3.fullname">
+          </div>
+          <div class="col-6">
+            <label for="cnic"><b>CNIC</b></label>
+            <input type="text" disabled id="cnic" name="cnic" [(ngModel)]="data3.cnic">
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-6">
+            <label for="personalInformation"><b>PERSONAL INFORMATION (POSITIVE/NEGATIVE AS PER LAF)</b></label>
+            <textarea rows="5" disabled id="personalInformation" name="personalInformation" [(ngModel)]="data1[0].personalInformation"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="professionalInformation"><b>PROFESSIONAL INFORMATION (POSITIVE/NEGATIVE AS PER LAF)</b></label>
+            <textarea rows="5" disabled id="professionalInformation" name="professionalInformation" [(ngModel)]="data1[0].professionalInformation"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="financialInformation"><b>FINANCIAL INFORMATION (POSITIVE/NEGATIVE AS PER LAF)</b></label>
+            <textarea rows="5" disabled id="financialInformation" name="financialInformation" [(ngModel)]="data1[0].financialInformation"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="neighborcheck_residence"><b>NEIGHBOR CHECK- RESIDENCE (POSITIVE/NEGATIVE)</b></label>
+            <textarea rows="5" disabled id="neighborcheck_residence" name="neighborcheck_residence" [(ngModel)]="data1[0].neighborcheck_residence"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="neighborcheck_business"><b>NEIGHBOR CHECK- BUSINESS (POSITIVE/NEGATIVE)</b></label>
+            <textarea rows="5" disabled id="neighborcheck_business" name="neighborcheck_business" [(ngModel)]="data1[0].neighborcheck_business"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="negative_reason"><b>IF NEGATIVE GIVE REASON</b></label>
+            <textarea rows="5" disabled id="negative_reason" name="negative_reason" [(ngModel)]="data1[0].negative_reason"></textarea>
+          </div>
+        </div><br>
+
+        <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Additional Remarks</h4></div><br>
+        
+
+        <div class="row">
+          <div class="col-6">
+            <label for="remarks_personalInformation"><b>PERSONAL INFORMATION</b></label>
+            <textarea rows="5" disabled id="remarks_personalInformation" name="remarks_personalInformation" [(ngModel)]="data1[0].remarks_personalInformation"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="remarks_professionalInformation"><b>PROFESSIONAL INFORMATION</b></label>
+            <textarea rows="5" disabled id="remarks_professionalInformation" name="remarks_professionalInformation" [(ngModel)]="data1[0].remarks_professionalInformation"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="remarks_financialInformation"><b>FINANCIAL INFORMATION</b></label>
+            <textarea rows="5" disabled id="remarks_financialInformation" name="remarks_financialInformation" [(ngModel)]="data1[0].remarks_financialInformation"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="verificationResults"><b>VERIFICATION RESULT (POSITIVE/NEGATIVE)</b></label>
+            <textarea rows="5" disabled id="verificationResults" name="verificationResults" [(ngModel)]="data1[0].verificationResults"></textarea>
+          </div>
+        </div> 
+        
+        <div class="jkl"></div>
+        <br><br>
+        <div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+            
+          <span *ngIf= "selectedDay === 'goldfin'">
+            <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+          </span>  
+          <span *ngIf= "selectedDay === 'alfalah'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+        </span>
+        <span *ngIf= "selectedDay === 'Tez'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+        </span> </div> <br><br>
+         <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Verification Form</h4></div><br><br>
+     
+        <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Pictures</h4></div><br><br>
+        
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-25">
+            <label for="picture1"><b>Picture 1</b></label>
+          </div>
+          <div class="col-75">
+            <img style="margin-left: 60px; width: 420px; height: 220px;" src="{{baseURL}}/{{data1[0].picture1}}">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-25">
+            <label for="picture2"><b>Picture 2</b></label>
+          </div>
+          <div class="col-75">
+            <img style="margin-left: 60px; width: 420px; height: 220px;" src="{{baseURL}}/{{data1[0].picture2}}">
+          </div>
+        </div>
+        <br>
+        
+        <br><br>
+        <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Office Work (ONLY)</h4></div><br><br>
+        
+        <div class="row">
+        <div class="col-25">
+          <label for="voName"><b>VO Name</b></label>
+        </div>
+        <div class="col-75">
+          <input type="text" disabled id="voName" name="voName" [(ngModel)]="data1[0].name">
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+          <label for="userCode"><b>VO Code</b></label>
+        </div>
+        <div class="col-75">
+          <input type="text" disabled id="userCode" name="userCode" [(ngModel)]="data1[0].userCode">
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+          <label for="today1"><b>Date</b></label>
+        </div>
+        <div class="col-75">
+          <input type="text" disabled id="today1" name="today1" [(ngModel)]="today1">
+        </div>
+        </div>
+        <br><br><br> <br><br><br>
+        <br><br><br> <br>
+        </form>
+        </div>
+        
+        </div>

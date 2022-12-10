@@ -1,0 +1,255 @@
+
+@media screen and (min-width: 1024px){
+    .slider-captions {
+        bottom: 89px !important;
+        left: 97px !important;
+    }
+    .lower{
+        display: block; margin-left: 115px;
+          margin-top: 30px;
+          margin-bottom: 23px;
+    }
+    .top_heading {
+        flex: 2;
+        margin-top: 110px !important;
+        position: relative;
+        font-size: 35px !important;
+        text-align: justify;
+        left: 13%;
+        text-align: left;
+        font-weight: 500;
+        color: black;
+    }
+    .top_heading1 {
+        flex: 2;
+        position: relative;
+        font-size: 35px !important;
+        font-weight: 500;
+        text-align: left;
+        left: 13%;
+        color: black;
+    }
+    #aka{
+        bottom: 150px !important;
+        left: 97px !important;
+    }
+    .bank-brand{
+        margin-left: 120px;
+        margin-top: 28px;
+    }
+    .gf {
+        right: 45px;
+    }
+    .loan {
+        margin-left: 26px;
+    }
+    .loan1 {
+        margin-left: 26px;
+        margin-top: -28px;
+    }
+    }
+    .cen {
+        text-align: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 765px){
+        .top_heading {
+            flex: 2;
+            margin-top: 101px !important;
+            position: relative;
+            font-size: 35px !important;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+        }
+        .lower{
+            display: block; margin-left: 120px;
+              margin-top: 60px;
+              margin-bottom: 23px;
+        }
+        .cen {
+            text-align: left;
+        }
+        .top_heading1 {
+            flex: 2;
+            position: relative;
+            font-size: 28px !important;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+        }
+        .loan {
+            margin-left: 90px;
+        }
+        .loan1 {
+            margin-left: 90px;
+            margin-top: -50px;
+        }
+    }
+    
+    .banner_headin{
+        display: none;
+    }
+    .tit{
+        font-size: 16px;
+        color: #505355;
+    }
+    
+    .bank_imgwrapper {
+        width: 160px;
+        height: auto;
+        
+    }
+    #im{
+        box-shadow: 1px 3px 0px #d8d8d8, 0 0 5px #b1b1b1, 0 0 2px #ffffff;
+    }
+    
+    .banner_wrapper .hero_strip {
+        padding: 68.5px;
+    }
+    
+    .banner_wrapper .hero_strip {
+        display: block;
+        width: 100%;
+        opacity: 1;
+        position: absolute;
+        bottom: 0;
+        padding: 72px;
+        background-color: #d9d9d9;
+        z-index: -1;
+        opacity: .31;
+    }
+    .mobile_number_input {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 500;
+        color: #242424;
+        border-radius: 12px!important;
+        padding: 6px 0px 13px 30px;
+        border: solid 1px transparent;
+        transition: ease all .3s;
+    }
+    
+    .applynow_button {
+        display: block;
+        border-radius: 16px;
+        box-shadow: 0 8px 12px 0 rgb(255 98 0 / 20%);
+        color: #fff;
+        font-weight: 600;
+        padding: 10px 24px 10px 29px !important;
+    }
+    
+    .btn1 {
+        font-size: 16px;
+        padding: 8px 20px;
+        background-color: #ff7f00;
+        line-height: 1.4;
+        text-align: center;
+        color: #fff;
+        border-style: none;
+        border-radius: 15px;
+        box-shadow: 0 8px 12px 0 rgb(255 98 0 / 20%);
+        font-weight: 600;
+        background-position: center;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .bank-brand{
+            margin-left: 107px;
+            margin-top: 45px;
+            margin-bottom: 23px;
+            
+        }
+        .upper {
+            
+        }
+        .lower{
+            display: block; margin-left: 105px;
+              margin-top: 60px;
+              margin-bottom: 23px;
+        }
+        .btn1{
+            font-size: 10px !important;
+            margin-top: 10px;
+            margin-left: 56px;
+        }
+        .gf {
+            right: 0px !important;
+        }
+        .loan {
+            margin-left: 20px;
+        }
+        .loan1 {
+            margin-left: 20px;
+            margin-top: -30px;
+        }
+        .font {
+            font-size: 15px;
+        }
+      }
+
+      @media screen and (max-width: 1400px) and (min-width: 3400px){
+        
+    }
+    @media only screen and (max-width: 1024px) and (min-width: 1024px){
+        .loan {
+            margin-left: 10px;
+        }
+        .loan1 {
+            margin-left: 10px;
+            margin-top: -8px ;
+        }
+       }
+       @media only screen and (max-width: 1099px) and (min-width: 1024px){
+        .loan {
+            margin-left: 10px;
+        }
+        .loan1 {
+            margin-left: 10px;
+            margin-top: -15px ;
+        }
+        .font {
+            font-size: 25px;
+        }
+       }
+       @media only screen and (max-width: 1420px) and (min-width: 1100px){
+        .loan {
+            margin-left: 10px;
+        }
+        .upper {
+            font-size: 25px ;
+        }
+        .loan1 {
+            margin-left: 10px;
+            margin-top: -20px ;
+        }
+        .font {
+            font-size: 25px;
+        }
+       }
+       @media only screen and (max-width: 1800px) and (min-width: 1420px){
+        .loan {
+            margin-left: 50px;
+        }
+        .loan1 {
+            margin-left: 50px;
+            margin-top: -38px ;
+        }
+        .font {
+            font-size: 25px;
+        }
+       }
+       @media only screen and (max-width: 2600px) and (min-width: 1800px){
+        .loan {
+            margin-left: 60px;
+        }
+        .loan1 {
+            margin-left: 60px;
+            margin-top: -45px ;
+        }
+        .font {
+            font-size: 25px;
+        }
+       }

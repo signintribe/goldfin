@@ -1,0 +1,175 @@
+<div class="container">
+	<div class="col-md-6 col-lg-8 col-xl-8 col-md-8 col-sm-10 col-12 offset-xl-2 offset-lg-2 offset-md-2  offset-sm-1 bg-white" style="padding: 23px;margin-top: 120px;  background: #FFFFDD!important;">
+		<h2 style="    padding: 18px 0px;">Sign Up</h2>
+	  <form action="">
+        <div class="row">
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/user(1).svg" style="width: 30px;">
+					</div>
+					<input class="form-control" type="text" name="fullname" [(ngModel)]="data.fullname" placeholder="Full Name" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+            
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/email.svg" style="width: 30px;">
+					</div>
+					<input class="form-control" type="email" name="email" [(ngModel)]="data.email" placeholder="Email" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/username.svg" style="width: 30px;">
+					</div>
+					<input class="form-control" name="userName" [(ngModel)]="data.userName" (keyup)="onKeyUsername($event)" type="text" placeholder="Username" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                </div>
+                               
+                        </div>
+                       
+                       
+            
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/password.svg" style="width: 30px;">
+					</div>
+					<input class="form-control"  name="password" type="password" [(ngModel)]="data.password" placeholder="Password" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+                        <div style="display: block;" class="col-lg-12 col-xl-12 pb-4">
+                                <p style="color: #f3cb00; font-size: 18px; font-weight: 600;"><span style="color: black;">{{suggest}} </span>  <span (click)="onClickMe(suggestName)" style="cursor: pointer;"> {{suggestName}}</span> <span style="cursor: pointer;" (click)="onClickMe1(suggestName1)"> {{suggestName1}}</span> <span style="cursor: pointer;" (click)="onClickMe2(suggestName2)"> {{suggestName2}}</span></p>
+                        </div>
+                        
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+                                                <i class="fa fa-key" aria-hidden="true" style="color: black;font-size: 25px;"></i>
+					</div>
+					<input class="form-control"  name="password2" type="password" [(ngModel)]="data.password2" placeholder=" Confirm Password" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+        
+			<div style="display: block;" class="col-lg-6 col-xl-6 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/phone.svg" style="width: 30px;">
+					</div>
+					<input class="form-control"  name="phone" type="text" (keyup)="onKeyMobile($event)" [(ngModel)]="data.phone" maxlength="15" placeholder="Mobile Number : +92-XXX-XXXXXXX" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+
+			<div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+				<div class="input-group">
+					<div class="input-group-addon">
+					<img src="assets/images/icon/cnic.svg" style="width: 30px;">
+					</div>
+					<input name="cnic" class="form-control" (keyup)="onKeyCNIC($event)" [(ngModel)]="data.cnic" maxlength="15" placeholder="CNIC : XXXXX-XXXXXXX-X" type="text" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+				</div>
+                        </div>
+
+			<div style="display: block;" class="col-lg-6 col-xl-6 offset-xl-3 col-xl-10 col-xl-12 pb-4">
+                                <div  class="custom-control custom-checkbox">
+                                        <input name="agree" [(ngModel)]="data.agree" id="defaultLoginFormRemember" type="checkbox" class="custom-control-input">
+                                        <label  class="custom-control-label" for="defaultLoginFormRemember">I agree to the Goldfin <a href="terms">terms and conditions</a></label>
+                                    </div>
+			</div>
+                        <br>
+                        <p style="color:red;padding-bottom: 10px;float: left;" class="h5">{{error}}</p>
+                        <br>
+                        <p style="color:green;padding-bottom: 10px;float: left;" class="h5">{{sucess}}</p>
+                        <br>
+
+			<div class="col-xl-4 offset-xl-4">
+				<button class="btn btn-block" (click)="registerUser()" style="background:#F3CB00; padding: 10px 51px;"> SIGN UP</button>
+			</div>
+			
+			<div style="display: block; text-align:center;" class="col-lg-12 col-xl-12 pb-4 input-container pt-4">
+			  <span>Already a member? <a href="login" style="color:#F3CB00; font-weight: bold;">Login</a></span>
+                        </div>
+                </div>
+        </form>
+      
+</div>
+</div>
+<br><br>  
+<!-- <div class="container">
+    <br><br>  
+   <form class="text-center border border-light p-5" action="#!">
+   
+       <p class="h4 mb-4">Signup</p>
+       <br>
+        <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/user(1).svg" />
+            </div>
+            <input type="text" name="fullname" [(ngModel)]="data.fullname" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" class="form-control mb-4" placeholder="Full Name">
+        </div>
+        <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                <div style="padding-top: 15px; width: 4%;">
+                        <img style="width: 25px;" src="assets/images/icon/email.svg" />
+                </div>
+                <input type="email" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="email" [(ngModel)]="data.email" class="form-control mb-4" placeholder="E-mail">
+        </div>
+       
+       <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/username.svg" />
+            </div>
+            <input type="text" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="userName" [(ngModel)]="data.userName" (keyup)="onKeyUsername($event)" class="form-control mb-4" placeholder="Username">
+        </div>
+      <p style="color: #f3cb00; font-size: 18px; font-weight: 600;"><span style="color: black;">{{suggest}} </span>  <span (click)="onClickMe(suggestName)" style="cursor: pointer;"> {{suggestName}}</span> <span style="cursor: pointer;" (click)="onClickMe1(suggestName1)"> {{suggestName1}}</span> <span style="cursor: pointer;" (click)="onClickMe2(suggestName2)"> {{suggestName2}}</span></p>
+
+       <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/password.svg" />
+            </div>
+            <input type="password" name="password" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" [(ngModel)]="data.password" class="form-control mb-4" placeholder="Password">
+        </div>
+        <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                <div style="padding-top: 15px; width: 4%;">
+                        <i class="fa fa-key" aria-hidden="true" style="font-size: 25px;"></i>
+                </div>
+                <input type="password" name="password2" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" [(ngModel)]="data.password2" class="form-control mb-4" placeholder="Confirm Password">
+        </div>
+        <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                <div style="padding-top: 15px; width: 4%;">
+                        <img style="width: 25px;" src="assets/images/icon/phone.svg" />
+                </div>
+                <input type="text" name="phone" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" (keyup)="onKeyMobile($event)" [(ngModel)]="data.phone" maxlength="15" class="form-control mb-4" placeholder="Mobile Number : +92-XXX-XXXXXXX">
+        </div>
+        <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                <div style="padding-top: 15px; width: 4%;">
+                        <img style="width: 25px;" src="assets/images/icon/cnic.svg" />
+                </div>
+                <input required type="text" name="cnic" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" (keyup)="onKeyCNIC($event)" [(ngModel)]="data.cnic" class="form-control mb-4" maxlength="15" placeholder="CNIC : XXXXX-XXXXXXX-X">
+        </div>
+       
+       
+       <div class="d-flex justify-content-around">
+           <div>
+               <div  class="custom-control custom-checkbox">
+                   <input name="agree" [(ngModel)]="data.agree" id="defaultLoginFormRemember" type="checkbox" class="custom-control-input">
+                   <label  class="custom-control-label" for="defaultLoginFormRemember">I agree to the Goldfin terms and conditions</label>
+               </div>
+           </div>
+       </div>
+       <br>
+       <p style="color:red;float: left;" class="h5">{{error}}</p>
+       <br>
+       <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+       <br>
+       <button (click)="registerUser()" class="btn btn-default" type="submit">Sign Up</button>
+       <br><br>
+       <p>Already a member?
+           <a style="font-size:18px;" href="login">Login</a>
+       </p>
+   
+   
+   </form>
+   <br><br> 
+   </div> -->

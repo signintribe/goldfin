@@ -1,0 +1,1333 @@
+<div class="container ">
+    <h1 class="text-center mb-5" style="margin-top: 67px;"><b style="color:#FFD500;">Loan </b> Application Form (LAF)</h1>
+    <div class="col-xl-10 col-12  offset-0 offset-xl-1 mb-5 mt-2 ">
+      <div class="row">
+          <div class="col-xl-3 col-3">
+              <img src="./assets/media/media/icons/persnol-information.svg" class="progress-icon1"  alt="">
+          </div>
+          <div class="col-xl-3 col-3">
+              <img src="./assets/media/media/icons/professional-information.svg" class="progress-icon" alt="">
+          </div>
+          <div class="col-xl-3 col-3">
+              <img src="./assets/media/media/icons/finnincial.svg" class="progress-icon" alt="">
+          </div>
+          <div class="col-xl-3 col-3">
+              <img src="./assets/media/media/icons/general.svg" class="progress-icon mr-5" alt="">
+          </div>
+      </div>
+    </div>
+
+    <div class="col-xl-10 offset-0 offset-xl-1 mb-2 ">
+        <ul id="progressbar00">
+            <li id="account"><p>Personal Information</p></li>
+            <li class="active" id="personal"><p>Professional Information</p></li>
+            <li class="active" id="payment"><p>Financial Information</p></li>
+            <li id="confirm" ><p>General Information</p></li>
+        </ul>
+    </div>
+</div>
+
+<div *ngIf="profession">
+    <div class="container" style="margin-top: 0px; margin-bottom: 120px;">
+                    <form action="">
+                        <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Profession :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/profession.svg" style="width: 34px;">
+                            </div>
+                            <select name="profession" [(ngModel)]="data.profession" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);" >
+                                            <option value="Health Care">Health Care</option>
+                                            <option value="Executive">Executive</option>
+                                            <option value="Management">Management</option>
+                                            <option value="Financial Industry">Financial Industry</option>
+                                            <option value="Engineering">Engineering</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Administration">Administration</option>
+                                            <option value="Service">Service</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Designation :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/bussiness-name.svg" style="width: 28px;">
+                            </div>
+                            <input [(ngModel)]="data.designation" name="designation"  class="form-control" type="text"  placeholder="Designation" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"   />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    Employer Name :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="assets/media/icons/empname.svg" style="width: 28px;">
+                                        </div>
+                                        <input [(ngModel)]="data.empname" name="empname"  class="form-control" type="text"  placeholder="Employer Name" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"   />
+                                    </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Employer Address :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/adress(1).svg" style="width: 27px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.empaddress" name="empaddress" placeholder="Employer Address" type="text"  style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>  
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Phone :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="assets/media/icons/15892.svg" style="width: 35px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.phone" name="phone" type="text" placeholder="Phone" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div> 
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Website :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/website.svg" style="width: 35px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.website" name="website" type="text" placeholder="Website" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div> 
+                
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Job Status :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/residence.svg" style="width: 34px;">
+                            </div>
+                            <select [(ngModel)]="data.jobstatus" name="jobstatus" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                            <option value="Permanent">Permanent</option>
+                                            <option value="Employer Contract">Employer Contract</option>
+                                            <option value="Third Party Contract">Third Party Contract</option>
+                              </select>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Date of Joining :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/nature-of -bussiness.svg" style="width: 30px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.dateofjoining" name="dateofjoining" type="date" value="" placeholder="Date of Joining" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Total Working Experience :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="assets/media/icons/XMLID_1_.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control"  [(ngModel)]="data.totalexp" name="totalexp" type="text" value="" placeholder="Total Working Experience, inclusive of current job"style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                 
+                
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    </div>
+
+                    <h4 class="ml-3 mt-3 mb-3">Financial Information:</h4><br>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Current Gross Salary :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/bussines-expense.png" style="width: 35px;">
+                            </div>
+                            <input class="form-control" name="grosssalary" [(ngModel)]="data.grosssalary" type="number" value="" placeholder="Current Gross Salary" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Current Net Salary : 
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/turnover.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="netsalary" [(ngModel)]="data.netsalary" type="number" value="" placeholder="Current Net Salary" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>    
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Any other source of Income :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/anyother-income.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="othersource" [(ngModel)]="data.othersource" type="number" value="" placeholder="Any Other Monthly Income (If Yes)"  style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Nature of other Income :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/residence.svg" style="width: 34px;">
+                                        </div>
+                                        <select [(ngModel)]="data.natureofincome" name="natureofincome" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                                    <option value="Saving">Saving</option>
+                                                    <option value="Rental">Rental</option>
+                                                    <option value="Committee">Committee</option>
+                                                    <option value="ROSCA">ROSCA</option>
+                                                    <option value="Receivable from Loan">Receivable from Loan </option>
+                                          </select>
+                                    </div>
+                    </div>
+
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Enter Desired Loan Amount :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/other-income-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="desiredLoanAmount" [(ngModel)]="data.desiredLoanAmount" type="number" value="" placeholder="Enter Desired Loan Amount" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+
+
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Do you have any outstanding loans :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/residence.svg" style="width: 34px;">
+                                        </div>
+                                        <select [(ngModel)]="data.outstandingloan" name="outstandingloan" #mySelect12 (change)='onOptionsSelected1(mySelect12.value)' class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                          </select>
+                                    </div>
+                    </div>
+
+                    <div *ngIf="oustandingLoan" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                            Source of Loan :
+                                    </label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon">
+                                    <img src="./assets/media/media/icons/sourceofloan.svg" style="width: 34px;">
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="data.sourceofloan" name="sourceofloan" type="text" value="" placeholder="Source of Loan" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                            </div>
+                            <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Enter Outstanding Loan amount :
+                                    </label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon">
+                                    <img src="./assets/media/media/icons/amountofloan.svg" style="width: 34px;">
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="data.outstandingloanamount" name="outstandingloanamount" type="text" value="" placeholder="Enter Outstanding Loan amount" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                    </div>
+                            </div>
+                    </div>
+                    
+
+                    
+                    
+                
+                
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <h4 class="ml-3 mt-3 mb-3">Average monthly house hold expenses:</h4><br>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            House Hold :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/home-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.household" #box  (keyup.enter)="onKeycal(box.value)"(blur)="onKeycal(box.value)" name="household" type="number" placeholder="House hold Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            House Rent :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/home-rent.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="number" [(ngModel)]="data.houserent" #box1  (keyup.enter)="onKeycal(box1.value)"(blur)="onKeycal(box1.value)" name="houserent" placeholder="House Rent Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Utility Bills :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/utility-bill.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.utilitybill" #box2  (keyup.enter)="onKeycal(box2.value)"(blur)="onKeycal(box2.value)" name="utilitybill" placeholder="Utility Bills Expense" type="number" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Children Education :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/education-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="number" [(ngModel)]="data.childeducation" #box3  (keyup.enter)="onKeycal(box3.value)"(blur)="onKeycal(box3.value)" name="childeducation" placeholder="Children Education Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Medical :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/medical-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="number" [(ngModel)]="data.medical" #box4  (keyup.enter)="onKeycal(box4.value)"(blur)="onKeycal(box4.value)" name="medical" placeholder="Medical Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Committee :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/Installment.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" [(ngModel)]="data.committe" #box5 (keyup.enter)="onKeycal(box5.value)"(blur)="onKeycal(box5.value)" name="committee" placeholder="Committee" type="number" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Loan Installment :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/Installment.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.loaninstallment" #box6 (keyup.enter)="onKeycal(box6.value)"(blur)="onKeycal(box6.value)" name="loaninstallment" type="number" placeholder="Loan Installment" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Misc :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/misc.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.other0" #box7 (keyup.enter)="onKeycal(box7.value)"(blur)="onKeycal(box7.value)" name="other0" type="number" value="" placeholder="Misc" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon" style="padding: 4px 20px;">
+                            <p class="" style="color:#212529;  position:relative;    top: 7px;">Total Expenses</p>
+                            </div>
+                            <input class="form-control" disabled value="{{total1}}" style="background: #fff!important;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    
+                
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                                    <a class="btn btn-default" (click)="selectlf2()">Next</a>
+                                    <br><br>
+                                    <p style="color:tomato;float: left;" class="h5">{{error}}</p>
+                    </div>
+                
+                
+                      </div>
+                   </form>
+    </div>
+</div>
+
+
+<div *ngIf="profession1">
+    <div class="container" style="margin-top: 0px; margin-bottom: 120px;">
+                    <form action="">
+                        <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Profession :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/profession.svg" style="width: 34px;">
+                            </div>
+                            <select name="profession" [(ngModel)]="data.profession" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);" >
+                                            <option value="Health Care">Health Care</option>
+                                            <option value="Executive">Executive</option>
+                                            <option value="Management">Management</option>
+                                            <option value="Financial Industry">Financial Industry</option>
+                                            <option value="Engineering">Engineering</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Administration">Administration</option>
+                                            <option value="Service">Service</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Bussiness Title/Name :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/bussiness-name.svg" style="width: 28px;">
+                            </div>
+                            <input [(ngModel)]="data.bussinessname" name="bname" class="form-control" type="text"  placeholder="Bussiness Title/Name" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"   />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Business Status :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/profession.svg" style="width: 34px;">
+                            </div>
+                            <select name="businessStatus" [(ngModel)]="data.businessStatus" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                            <option value="Sole Proprietor">Sole Proprietor</option>
+                                            <option value="Family Concern">Family Concern</option>
+                                            <option value="Joint">Joint</option>
+                                            <option value="Private LTD">Private LTD</option>
+                                            <option value="Public Limited">Public Limited </option>
+                                            <option value="Others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Business Address :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/adress(1).svg" style="width: 27px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.bussinessaddress" name="baddress" placeholder="Business Address (Complete address, Nearest land mark)" type="text"  style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>  
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Landline :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/landlinee.svg" style="width: 35px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.bussinesslandline" name="blandline" type="text" placeholder="Landline" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div> 
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Website :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/website.svg" style="width: 35px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.bussinesswebsite" name="bwebsite" type="text" placeholder="Website" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div> 
+                
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Status :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/residence.svg" style="width: 34px;">
+                            </div>
+                            <select name="bussinessOwnstatus" [(ngModel)]="data.bussinessOwnstatus" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                            <option value="Family">Family</option>
+                                            <option value="Owned">Owned</option>
+                                            <option value="Rented">Rented</option>
+                              </select>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Nature Of Busines :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/nature-of -bussiness.svg" style="width: 34px;">
+                            </div>
+                            <select name="natureofbusiness" [(ngModel)]="data.natureofbusiness" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                            <option value="Services">Services</option>
+                                            <option value="Manufacturing">Manufacturing</option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Trading">Trading</option>
+                                            <option value="Import/ Export">Import/ Export</option>
+                                            <option value="Construction">Construction</option>
+                                            <option value="Merchandising">Merchandising</option>
+                                            <option value="Other">Other</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Company Name:
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/company-name.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="companyname" [(ngModel)]="data.companyname" type="text" placeholder="Company Name"style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Established Since :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/date-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="date" name="establishsince" [(ngModel)]="data.establishsince" placeholder="Established Since" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           SECP Registration Number(If Register) :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/secp-registration.png" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="number" name="secp" [(ngModel)]="data.secp" placeholder=" SECP Registration Number(If Register)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Date Of Registration :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/date-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="dateofreg" [(ngModel)]="data.dateofreg" type="date" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                          NTN If filer :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/iffiler.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="number" name="ntn" [(ngModel)]="data.ntn" placeholder="NTN If filer" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Number Of Employees :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/number of employes.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="nbrofemp" [(ngModel)]="data.nbrofemp" type="number" placeholder="Number Of employees" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <h4 class="ml-3 mt-3 mb-3">In case Agriculturist :</h4><br>
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Working :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/profession.svg" style="width: 34px;">
+                            </div>
+                            <select [(ngModel)]="data.working" name="working" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                            <option value="Independent">Independent</option>
+                                            <option value="Shared">Shared</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                          Own Land (Acres) :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/ownland.svg" style="width: 34px;">
+                            </div>
+                            <input [(ngModel)]="data.ownland" name="ownland" class="form-control" type="number" value="" placeholder="Own Land (Acres)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Ranted Land (Acres) :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/ranted-land.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.rentedland" name="rentedland" type="text" placeholder="Ranted Land (Acres)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Cultivating Since :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/cultivate.svg" style="width: 35px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.cultivating" name="cultivating" type="text" value="" placeholder=" Cultivating Since" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Animals :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/animals.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.animals" name="animals" type="text" value="" placeholder="Animals" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                          Main Crops :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/crops.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.maincrops" name="maincrops" type="text" value="" placeholder=" Main crops (Wheat Rice Sugar Cotton etc)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <h4 class="ml-3 mt-3 mb-3">Financial Information:</h4><br>
+                
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                            Average Monthly Business Expenses (business purchases, rent, utility, salaries, other) :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/bussines-expense.png" style="width: 35px;">
+                            </div>
+                            <input class="form-control" type="number" [(ngModel)]="data.averagemonthbusinessexp" name="averagemonthbusinessexp" placeholder="Average Monthly Business Expenses (business purchases, rent, utility, salaries, other)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           Monthly Turn Over :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/turnover.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" [(ngModel)]="data.avgmonthturnover" name="avgmonthturnover" type="number" placeholder="Average Monthly Turn over (sale, service etc.)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>    
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                          Any other monthly Income :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/anyother-income.svg" style="width: 34px;">
+                            </div>
+                            <input [(ngModel)]="data.monthlyincome" name="monthlyincome" class="form-control" type="number" placeholder="Any Other monthly Income (if yes)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                        Nature of other Income :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/other-income-icon.svg" style="width: 34px;">
+                            </div>
+                            <select [(ngModel)]="data.otherincome" name="otherincome" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                        <option value="Saving">Saving</option>
+                                        <option value="Rental">Rental</option>
+                                        <option value="Committee">Committee</option>
+                                        <option value="ROSCA">ROSCA</option>
+                                        <option value="Receivable from Loan">Receivable from Loan </option>
+                              </select>
+                        </div>
+                    </div>
+
+
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                          Do you maintain monthly accounts:
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/monthly account.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control"  [(ngModel)]="data.monthlyaccounts" name="monthlyaccounts" type="text" value="" placeholder="Do you maintain monthly accounts" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                    Enter Desired Loan Amount :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/media/icons/other-income-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" name="desiredLoanAmount" [(ngModel)]="data.desiredLoanAmount" type="number" value="" placeholder="Enter Desired Loan Amount" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Do you have any outstanding loans :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/residence.svg" style="width: 34px;">
+                                        </div>
+                                        <select [(ngModel)]="data.outstandingloan" name="outstandingloan" #mySelect12 (change)='onOptionsSelected1(mySelect12.value)' class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);">
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                          </select>
+                                    </div>
+                    </div>
+
+                    <div *ngIf="oustandingLoan" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                            Source of Loan :
+                                    </label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon">
+                                    <img src="./assets/media/media/icons/sourceofloan.svg" style="width: 34px;">
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="data.sourceofloan" name="sourceofloan" type="text" value="" placeholder="Source of Loan" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                            </div>
+                            <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                                    Enter Outstanding Loan amount :
+                                    </label>
+                                    <div class="input-group">
+                                    <div class="input-group-addon">
+                                    <img src="./assets/media/media/icons/amountofloan.svg" style="width: 34px;">
+                                    </div>
+                                    <input class="form-control" [(ngModel)]="data.outstandingloanamount" name="outstandingloanamount" type="text" value="" placeholder="Enter Outstanding Loan amount" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                    </div>
+                            </div>
+                    </div>
+
+                    <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                            <h4 class="ml-3 mt-3 mb-3">Average monthly house hold expenses:</h4>
+                    </div>
+                
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        House Hold :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/home-icon.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" [(ngModel)]="data.household1" #box  (keyup.enter)="onKeycal2(box.value)"(blur)="onKeycal2(box.value)" name="household1" type="number" placeholder="House hold Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        House Rent :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/home-rent.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" type="number" [(ngModel)]="data.houserent1" #box1  (keyup.enter)="onKeycal2(box1.value)"(blur)="onKeycal2(box1.value)" name="houserent1" placeholder="House Rent Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        Utility Bills :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/utility-bill.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" [(ngModel)]="data.utilitybills1" #box2  (keyup.enter)="onKeycal2(box2.value)"(blur)="onKeycal2(box2.value)" name="utilitybills1" placeholder="Utility Bills Expense" type="number" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        Children Education :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/education-icon.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" type="number" [(ngModel)]="data.childeducation1" #box3  (keyup.enter)="onKeycal2(box3.value)"(blur)="onKeycal2(box3.value)" name="childeducation1" placeholder="Children Education Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        Medical :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/medical-icon.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" type="number" [(ngModel)]="data.medical1" #box4  (keyup.enter)="onKeycal2(box4.value)"(blur)="onKeycal2(box4.value)" name="medical1" placeholder="Medical Expense" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                                <label class="control-label " for="email">
+                                                                Committee :
+                                                </label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                    <img src="./assets/media/media/icons/Installment.svg" style="width: 34px;">
+                                                    </div>
+                                                    <input class="form-control" [(ngModel)]="data.committee1" #box5 (keyup.enter)="onKeycal2(box5.value)"(blur)="onKeycal2(box5.value)" name="committee1" placeholder="Committee" type="number" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                                </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        Loan Installment :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/Installment.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" [(ngModel)]="data.loaninstallment1" #box6 (keyup.enter)="onKeycal2(box6.value)"(blur)="onKeycal2(box6.value)" name="loaninstallment1" type="number" placeholder="Loan Installment" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                                </div>
+                                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                        Misc :
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                        <img src="./assets/media/media/icons/misc.svg" style="width: 34px;">
+                                        </div>
+                                        <input class="form-control" [(ngModel)]="data.other3" #box7 (keyup.enter)="onKeycal2(box7.value)"(blur)="onKeycal2(box7.value)" name="other3" type="number" value="" placeholder="Misc" style="text-align: right;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"/>
+                                    </div>
+                                </div>
+                            
+                                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon" style="padding: 4px 20px;">
+                                        <p class="" style="color:#212529;  position:relative;    top: 7px;">Total Expenses</p>
+                                        </div>
+                                        <input class="form-control" disabled value="{{total2}}" style="background: #fff!important;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                                    </div>
+                                </div>
+                
+                    
+                
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                                    <a class="btn btn-default" (click)="selectlf2()">Next</a>
+                                    <br><br>
+                                    <p style="color:tomato;float: left;" class="h5">{{error}}</p>
+                    </div>
+                
+                
+                      </div>
+                   </form>
+    </div>
+</div>
+
+
+
+<!-- 
+<div class="container">
+<br><br>  
+<form class="text-center border border-light p-5" action="#!">
+
+<p class="h4 mb-4">Loan Application Form (LAF)</p>
+<br>
+<p><span  class="h6 mb-4" style="color:#bebcbc">Personal Information</span> - <span  class="h5 mb-4" style="color:#ffd500"><b>Professional Information</b></span> - <span class="h5 mb-4" style="color:#ffd500"><b>Financial Information</b></span>- <span class="h6 mb-4" style="color:#bebcbc">General Information</span></p>
+<br>
+<label style="float: left;">Profession :</label>
+<div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+<select name="profession" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.profession">
+  <option value="Health Care">Health Care</option>
+  <option value="Executive">Executive</option>
+  <option value="Management">Management</option>
+  <option value="Financial Industry">Financial Industry</option>
+  <option value="Engineering">Engineering</option>
+  <option value="Education">Education</option>
+  <option value="Administration">Administration</option>
+  <option value="Service">Service</option>
+  <option value="Agriculture">Agriculture</option>
+  <option value="Others">Others</option>
+</select>
+</div>
+<br>
+<div *ngIf="profession">
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/designation.svg" />
+            </div>
+            <input type="text" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" [(ngModel)]="data.designation" name="designation" class="form-control mb-4" placeholder="Designation">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/empname.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.empname" name="empname" class="form-control mb-4" placeholder="Employer Name">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/adress(1).svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.empaddress" name="empaddress" class="form-control mb-4" placeholder="Employer Address">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/15892.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.phone" name="phone" class="form-control mb-4" placeholder="Phone">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/2301129.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.website" name="website" class="form-control mb-4" placeholder="Website">
+    </div>
+
+    <label style="float: left;">Job Status :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="jobstatus" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.jobstatus">
+       <option value="Permanent">Permanent</option>
+       <option value="Employer Contract">Employer Contract</option>
+       <option value="Third Party Contract">Third Party Contract</option>
+     </select>
+    </div><br>
+    
+
+    <label style="float: left;">Date of Joining :</label>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="date" [(ngModel)]="data.dateofjoining" name="dateofjoining" class="form-control mb-4" placeholder="Date of Joining">
+    </div> 
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/XMLID_1_.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.totalexp" name="totalexp" class="form-control mb-4" placeholder="Total Working Experience, inclusive of current job">
+    </div>
+
+    
+    <br>
+    <br>
+    <p style="float: left;" class="h4 mb-6">Financial Information</p>
+    <br>
+    <br>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="grosssalary" [(ngModel)]="data.grosssalary" class="form-control mb-4" placeholder="Current Gross Salary">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="netsalary" [(ngModel)]="data.netsalary" class="form-control mb-4" placeholder="Current Net Salary">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="othersource" [(ngModel)]="data.othersource" class="form-control mb-4" placeholder="Any other source of Income">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 10px; width: 4%;">
+            <img style="width: 25px;" src="assets/images/icon/Personnel.svg" />
+            </div>
+            <input type="text" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="desiredLoanAmount" [(ngModel)]="data.desiredLoanAmount" class="form-control mb-4" placeholder="Enter Desired Loan Amount">
+    </div>
+   <label style="float: left;">Nature of other Income :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="natureofincome" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.natureofincome">
+       <option value="Saving">Saving</option>
+       <option value="Rental">Rental</option>
+       <option value="Committee">Committee</option>
+       <option value="ROSCA">ROSCA</option>
+       <option value="Receivable from Loan">Receivable from Loan </option>
+     </select>
+    </div>
+    <br>
+    <label style="float: left;">Do you have any outstanding loans :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="outstandingloan" #mySelect12 (change)='onOptionsSelected1(mySelect12.value)' style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.outstandingloan">
+       <option value="Yes">Yes</option>
+       <option value="No">No</option>
+     </select>
+    </div>
+    <br>
+    <div *ngIf="oustandingLoan">
+            <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                    <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.sourceofloan" name="sourceofloan" class="form-control mb-4" placeholder="Source of loan">
+            </div>
+            <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+                    <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.outstandingloanamount" name="outstandingloanamount" class="form-control mb-4" placeholder="Enter Outstanding Loan amount">
+            </div>
+    </div>
+    
+    <p style="float: left;" class="h6 mb-4">Average monthly house hold expenses</p>
+    <br>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 7px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Expenses Details</p>
+            <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >Average monthly expenses</p>
+    </div>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">House Hold</p>
+            <input type="number" [(ngModel)]="data.household" #box  (keyup.enter)="onKeycal(box.value)"(blur)="onKeycal(box.value)" name="household" placeholder="House hold Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">House Rent</p>
+            <input type="number" [(ngModel)]="data.houserent" #box1  (keyup.enter)="onKeycal(box1.value)"(blur)="onKeycal(box1.value)" name="houserent" placeholder="House Rent Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Utility Bills</p>
+            <input type="number" [(ngModel)]="data.utilitybills" #box2  (keyup.enter)="onKeycal(box2.value)"(blur)="onKeycal(box2.value)" name="utilitybills" placeholder="Utility Bills Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Children Education</p>
+            <input type="number" [(ngModel)]="data.childeducation" #box3  (keyup.enter)="onKeycal(box3.value)"(blur)="onKeycal(box3.value)" name="childeducation" placeholder="Children Education Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Medical</p>
+            <input type="number" [(ngModel)]="data.medical" #box4  (keyup.enter)="onKeycal(box4.value)"(blur)="onKeycal(box4.value)" name="medical" placeholder="Medical Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Committee</p>
+            <input type="number" [(ngModel)]="data.committee" #box5 (keyup.enter)="onKeycal(box5.value)"(blur)="onKeycal(box5.value)" name="committee" placeholder="Committee" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Installment</p>
+            <input type="number" [(ngModel)]="data.loaninstallment" #box6 (keyup.enter)="onKeycal(box6.value)"(blur)="onKeycal(box6.value)" name="loaninstallment" placeholder="Loan Installment" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Misc</p>
+            <input type="number" [(ngModel)]="data.other0" #box7 (keyup.enter)="onKeycal(box7.value)"(blur)="onKeycal(box7.value)" name="other0" placeholder="Misc" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Total Expenses</p>
+            <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >{{total1}}</p>
+    </div>
+
+</div>
+<br>
+<div *ngIf="profession1">
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 10px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/name.svg" />
+            </div>
+        <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.bussinessname" name="bname" class="form-control mb-4" placeholder="Business Title/Name">
+    </div>
+    <label style="float: left;">Business Status :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="businessStatus" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.businessStatus">
+       <option value="Sole Proprietor">Sole Proprietor</option>
+       <option value="Family Concern">Family Concern</option>
+       <option value="Joint">Joint</option>
+       <option value="Private LTD">Private LTD</option>
+       <option value="Public Limited">Public Limited </option>
+       <option value="Others">Others</option>
+     </select>
+    </div><br>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 10px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/adress(1).svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.bussinessaddress" name="baddress" class="form-control mb-4" placeholder="Business Address (Complete address, Nearest land mark)">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 10px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/15892.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.bussinesslandline" name="blandline" class="form-control mb-4" placeholder="Landline">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 12px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/2301129.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.bussinesswebsite" name="bwebsite" class="form-control mb-4" placeholder="Website">
+    </div>
+
+    
+    <label style="float: left;">Status :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="bussinessOwnstatus" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.bussinessOwnstatus">
+       <option value="Family">Family</option>
+       <option value="Owned">Owned</option>
+       <option value="Rented">Rented</option>
+     </select>
+    </div><br>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/c.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="natureofbusiness" [(ngModel)]="data.natureofbusiness" class="form-control mb-4" placeholder="Nature of Business">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/dd.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="companyname" [(ngModel)]="data.companyname" class="form-control mb-4" placeholder="Company Name">
+    </div>
+
+    
+    <label style="float: left;">Established Since :</label>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="date" name="establishsince" [(ngModel)]="data.establishsince" class="form-control mb-4" placeholder="Established Since">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="secp" [(ngModel)]="data.secp" class="form-control mb-4" placeholder="SECP registration number *(If registered with SECP)">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="dateofreg" [(ngModel)]="data.dateofreg" class="form-control mb-4" placeholder="Date of Registration (Registered since)">
+    </div>
+  
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="ntn" [(ngModel)]="data.ntn" class="form-control mb-4" placeholder="NTN *If Filler">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" name="nbrofemp" [(ngModel)]="data.nbrofemp" class="form-control mb-4" placeholder="Number of employees">
+    </div>
+
+    
+    <br>
+    <p style="float: left;" class="h4 mb-6">In case agriculturist</p>
+    <br><br>
+    <label style="float: left;">Working :</label>
+    <div style="border-radius: 0;width: 55px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background-size: 9px; background-repeat: no-repeat; background-position: 12% 15px;">
+     <select name="working" style="background: transparent ;border-width: 0 0 1px 0; font-size: 1rem;"  [(ngModel)]="data.working">
+       <option value="Independent">Independent</option>
+       <option value="Shared">Shared</option>
+     </select>
+    </div><br>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/dd.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.ownland" name="ownland" class="form-control mb-4" placeholder="Own Land (Acres)">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/rent.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.rentedland" name="rentedland" class="form-control mb-4" placeholder="Rented Land (Acres)">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/register(1).svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.cultivating" name="cultivating" class="form-control mb-4" placeholder="Cultivating since (Years)">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/crop.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.maincrops" name="maincrops" class="form-control mb-4" placeholder="Main Crops (wheat, rice, sugar, cotton, etc.)">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/amimals.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.animals" name="animals" class="form-control mb-4" placeholder="Animals">
+    </div>
+
+    
+    <br>
+    <p style="float: left;" class="h4 mb-6">Financial Information</p>
+    <br>
+    <br>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.averagemonthbusinessexp" name="averagemonthbusinessexp" class="form-control mb-4" placeholder="Average Monthly Business Expenses (business purchases, rent, utility, salaries, other)">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.avgmonthturnover" name="avgmonthturnover" class="form-control mb-4" placeholder="Average Monthly Turn over (sale, service etc.)">
+    </div>
+    
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.monthlyincome" name="monthlyincome" class="form-control mb-4" placeholder="Any Other monthly Income (if yes)">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.otherincome" name="otherincome" class="form-control mb-4" placeholder="Source of Other Income (saving, rental, committee (ROSCA), receivable from loan etc. ">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.monthlyaccounts" name="monthlyaccounts" class="form-control mb-4" placeholder="Do you maintain monthly accounts">
+    </div>
+
+    
+    
+    <br>
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.outstandingloan2" name="outstandingloan2" class="form-control mb-4" placeholder="Do you have any outstanding loans">
+    </div>
+
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/money.svg" />
+            </div>
+            <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.sourceofloan2" name="sourceofloan2" class="form-control mb-4" placeholder="Source of loan">
+    </div>
+   
+    <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/media/icons/outline.svg" />
+            </div>
+        <input style="border: 2px solid #ffd500;margin-bottom: 0px !important;" type="text" [(ngModel)]="data.loanamount2" name="loanamount2" class="form-control mb-4" placeholder="Loan amount">
+    </div>
+    <br>
+    <p style="float: left;" class="h6 mb-4">Average monthly house hold expenses</p>
+    <br>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 7px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Expenses Details</p>
+            <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >Average monthly expenses</p>
+    </div>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">House Hold</p>
+            <input type="number" [(ngModel)]="data.household1"  #box  (keyup.enter)="onKeycal2(box.value)"(blur)="onKeycal2(box.value)" name="household1" placeholder="House hold Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">House Rent</p>
+            <input type="number" [(ngModel)]="data.houserent1"  #box1  (keyup.enter)="onKeycal2(box1.value)"(blur)="onKeycal2(box1.value)" name="houserent1" placeholder="House Rent Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Utility Bills</p>
+            <input type="number" [(ngModel)]="data.utilitybills1"  #box2 (keyup.enter)="onKeycal2(box2.value)"(blur)="onKeycal2(box2.value)" name="utilitybills1" placeholder="Utility Bills Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Children Education</p>
+            <input type="number" [(ngModel)]="data.childeducation1"  #box3  (keyup.enter)="onKeycal2(box3.value)"(blur)="onKeycal2(box3.value)" name="childeducation1" placeholder="Children Education Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Medical</p>
+            <input type="number" [(ngModel)]="data.medical1"  #box4  (keyup.enter)="onKeycal2(box4.value)"(blur)="onKeycal2(box4.value)" name="medical1" placeholder="Medical Expense" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Medical</p>
+            <input type="number" [(ngModel)]="data.committee1"  #box5  (keyup.enter)="onKeycal2(box5.value)"(blur)="onKeycal2(box5.value)" name="committee1" placeholder="Medical" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Installment</p>
+            <input type="number" [(ngModel)]="data.loaninstallment1"  #box6  (keyup.enter)="onKeycal2(box6.value)"(blur)="onKeycal2(box6.value)" name="loaninstallment1" placeholder="Loan Installment" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Misc</p>
+            <input type="number" [(ngModel)]="data.other3" name="other3"  #box7  (keyup.enter)="onKeycal2(box7.value)"(blur)="onKeycal2(box7.value)" placeholder="Misc" style="display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+
+    <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;">
+            <p style="height: calc(1.5em + .75rem + 8px);background: #FFD500; padding: 9px; min-width: 35%; color: black;">Total Expenses</p>
+            <p style="display: block; width: 100%; height: calc(1.5em + .75rem + 6px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 7px 30px; resize: none;" >{{total2}}</p>
+    </div>
+
+</div>
+<br>
+<a class="btn btn-default" (click)="selectlf2()">Next</a>
+<br><br>
+<p style="color:tomato;float: left;" class="h5">{{error}}</p>
+
+
+</form>
+<br><br> 
+</div> -->

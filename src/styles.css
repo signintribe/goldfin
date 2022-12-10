@@ -1,0 +1,198 @@
+/* You can add global styles to this file, and also import other style files */
+@media(max-width:991px)
+{
+::placeholder
+{font-size: 10px!important;}    
+#date{font-size: 10px!important;height: 53px;}
+.addons{padding: 2px 10px!important;}
+.addons1
+{padding: 2px 16px!important;}
+select.form-control
+{font-size: 10px!important;height: 57px;}
+}
+*{margin:0;padding:0;}
+.form-control:focus {color: #495057;background-color: #fff;border-color: #32465a;outline: 0;box-shadow: 0 0 0 -0.8rem #FFC0FE;}
+.buttons .btn:hover{outline: none !important;box-shadow: inset 0 0px 0 #ddd;background-image: none !important;}
+
+.form-control
+{
+    height: calc(2.6em + .75rem + 7px);    
+}
+
+
+.input-group-addon
+{
+border: 2px solid#808080;
+border-right: none;
+padding: 7px 8px;
+border-radius: 5px;
+color: #fff;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;   
+}
+
+
+#progressbar00 {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar00 .active {
+    color: #f3cb00;
+}
+
+#progressbar00 li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+    padding: 26px 0px;
+}
+#progressbar00 li  span
+{
+    position: relative;
+    left: 58px; 
+    margin: 300px 0px;   
+}
+
+#progressbar00 #account:before {
+    font-family: FontAwesome;
+    content: ""
+}
+
+#progressbar00 #personal:before {
+    font-family: FontAwesome;
+    content: ""
+}
+
+#progressbar00 #payment:before {
+    font-family: FontAwesome;
+    content: ""
+}
+
+#progressbar00 #confirm:before {
+    font-family: FontAwesome;
+    content: ""
+}
+
+#progressbar00 li.active:before
+{
+width: 22px;
+height: 22px;     
+}
+
+#progressbar00 li:before {
+    width: 22px;
+    height: 22px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding-left: 17px;
+    padding-top: 3px;
+    position: relative;
+    bottom: 12px;
+}
+
+#progressbar00 li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar00 li.active:before,
+#progressbar00 li.active:after {
+    background: #f3cb00;
+}
+
+@media(min-width:991px)
+{
+.progress-icon
+{
+width: 60px;
+height: 60px; 
+position: relative; 
+left:72px;    
+}    
+.progress-icon1
+{
+width: 60px;
+height: 60px; 
+position: relative; 
+left:92px;    
+}    
+#progressbar00 li p
+{
+font-size: 12px!important;
+position: relative;
+left: 41px;
+font-size: 16px!important;
+
+}  
+}
+
+@media(max-width:991px)
+{
+.progress-icon
+{
+width: 60px;
+height: 60px; 
+position: relative; 
+left:50px;    
+}    
+.progress-icon1
+{
+width: 60px;
+height: 60px; 
+position: relative; 
+left: 57px;
+}    
+#progressbar00 li p
+{
+font-size: 12px!important;
+position: relative;
+left: 22px;
+font-size: 13px!important;
+
+}  
+}
+
+
+@media(max-width:767px)
+{
+.progress-icon
+{
+width: 35px;
+height: 35px; 
+position: relative; 
+left:30px;    
+}
+.progress-icon1
+{
+width: 35px;
+height: 35px; 
+position: relative; 
+left:44px;    
+}
+#progressbar00 li p
+{
+font-size: 12px!important;
+position: relative;
+left: 12px;
+font-size: 10px!important;
+
+}   
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

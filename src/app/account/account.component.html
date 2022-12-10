@@ -1,0 +1,1645 @@
+
+<br><br>
+<div *ngIf="user">
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <!-- <a href="#account" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;BO Portal
+                  </a> -->
+                  <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a>
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    
+      
+      <!-- <div class="tab-pane" id="account">
+        <h6>Bo Portal</h6>
+        
+        
+      </div> -->
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+</div>
+
+
+<div *ngIf="admin">
+  <div class="container" style="margin-top: 120px; ">
+    <div class="row gutters-sm" style="">
+      <div class="col-md-4 d-none d-md-block">
+        <div class="card" style="background: #eff3f8;">
+          <div class="card-body">
+            <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+              <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+              </a>
+              <a href="superAdmin" class="nav-item nav-link has-icon nav-link-faded">
+                <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Super Admin Portal
+              </a>
+              <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+              </a> -->
+              <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+              </a>
+              <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+              </a>
+             
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+         <div class="card">
+
+           <div class="card-header border-bottom mb-3 d-flex d-md-none">
+             <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                <li class="nav-item">
+                  <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                </li> 
+                <li class="nav-item">
+                  <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                </li>
+                <li class="nav-item">
+                  <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                </li>
+            </ul>
+          </div>
+
+<div class="card-body tab-content"  style="background: #eff3f8;">
+    <div class="tab-pane active pt-3" id="profile" >
+                            
+        <div class="row">
+          <div class="col-xl-3"> 
+                <div style="display: block;" class=" pb-3 input-container">
+                  <div class="input-group" >
+                      <div class="input-group-addon" style="border: none !important">
+                        <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+            <div class="input-group">
+                <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+            </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="col-xl-3"> 
+                <div style="display: block;" class=" pb-3 input-container">
+                  <div class="input-group">
+                      <div class="input-group-addon mr-1" style="border: none !important">
+                        <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+            <div class="input-group">
+                <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+            </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="col-xl-3"> 
+                <div style="display: block;" class=" pb-3 input-container">
+                  <div class="input-group">
+                      <div class="input-group-addon" style="border: none !important">
+                        <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+            <div class="input-group">
+                <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+            </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-xl-3"> 
+                <div style="display: block;" class=" pb-3 input-container">
+                  <div class="input-group">
+                      <div class="input-group-addon" style="border: none !important">
+                        <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+            <div class="input-group">
+                <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+            </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-xl-3"> 
+                <div style="display: block;" class=" pb-3 input-container">
+                  <div class="input-group">
+                      <div class="input-group-addon" style="border: none !important">
+                        <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+          <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+            <div class="input-group">
+                <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="tab-pane" id="account">
+    <h6><a href="superAdmin">Super Admin Portal</a></h6>
+    
+    
+  </div>
+
+
+  <div class="tab-pane" id="security">
+    <h6 class="pb-4 pt-3">Change Password</h6>
+      <div class="row">
+        <div class="col-xl-4"> 
+              <div style="display: block;" class=" pb-3 input-container">
+                <div class="input-group">
+                    <div class="input-group-addon" style="border: none !important">
+                      <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+          <div class="input-group">
+              <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+          </div>
+      </div>
+  </div>
+      <div class="row">
+        <div class="col-xl-4"> 
+              <div style="display: block;" class=" pb-3 input-container">
+                <div class="input-group">
+                    <div class="input-group-addon" style="border: none !important">
+                      <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+          <div class="input-group">
+              <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+          </div>
+      </div>
+  </div>
+      <div class="row">
+        <div class="col-xl-4"> 
+              <div style="display: block;" class=" pb-3 input-container">
+                <div class="input-group">
+                    <div class="input-group-addon" style="border: none !important">
+                      <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+          <div class="input-group">
+              <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+          </div>
+      </div>
+  </div>
+    
+  </div>
+           
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="cso">
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <a href="cso" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;CSO Portal
+                  </a>
+                  <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a> -->
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <!-- <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+    
+      
+      <div class="tab-pane" id="account">
+        <h6><a href="cso">CSO Portal</a></h6>
+        
+        
+      </div>
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+</div>
+
+
+<div *ngIf="cmo">
+        
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <a href="cmo" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;CMO Portal
+                  </a>
+                  <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a> -->
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <!-- <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+    
+      
+      <div class="tab-pane" id="account">
+        <h6><a href="cmo">CMO Portal</a></h6>
+        
+        
+      </div>
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+</div>
+
+
+<div *ngIf="bo">
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <a href="bo2" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;BS Portal
+                  </a>
+                  <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a> -->
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <!-- <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+    
+      
+      <div class="tab-pane" id="account">
+        <h6><a href="bo2">BS Portal</a></h6>
+        
+        
+      </div>
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+</div>
+
+
+<div *ngIf="vo">
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <a href="vo" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;VO Portal
+                  </a>
+                  <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a> -->
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <!-- <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+    
+      
+      <div class="tab-pane" id="account">
+        <h6><a href="vo">VO Portal</a></h6>
+        
+        
+      </div>
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+</div>
+
+
+
+<div *ngIf="bs">
+    <div class="container" style="margin-top: 120px; ">
+        <div class="row gutters-sm" style="">
+          <div class="col-md-4 d-none d-md-block">
+            <div class="card" style="background: #eff3f8;">
+              <div class="card-body">
+                <nav class="nav flex-column nav-pills nav-gap-y-1" sty>
+                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                    <img src="./assets/loan/user.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Profile
+                  </a>
+                  <a href="branchOfficer" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/username.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;BO Portal
+                  </a>
+                  <!-- <a href="#status" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/loan-amount.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Loan Application Status
+                  </a> -->
+                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/setting.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Setting
+                  </a>
+                  <a (click)="logout()" href="" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
+                    <img src="./assets/loan/phone.svg" style="width: 25px !important" alt="">&nbsp;&nbsp;Logout
+                  </a>
+                 
+                </nav>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-8">
+             <div class="card">
+    
+               <div class="card-header border-bottom mb-3 d-flex d-md-none">
+                 <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
+                    <li class="nav-item">
+                      <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+                    </li> 
+                    <li class="nav-item">
+                      <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
+                    </li>
+                </ul>
+              </div>
+    
+    <div class="card-body tab-content"  style="background: #eff3f8;">
+        <div class="tab-pane active pt-3" id="profile" >
+                                
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group" >
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/user.svg" style="width: 25px !important;margin: 0px 6px;">Full Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{fullname}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon mr-1" style="border: none !important">
+                            <img src="./assets/loan/email.svg" style="width: 25px !important;margin: 0px 6px;">Email:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{email}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+    
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/username.svg" style="width: 25px !important;margin: 0px 6px;">User Name:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{userName}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/cnic.svg" style="width: 25px !important;margin: 0px 6px;">Cnic:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{cnic}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xl-3"> 
+                    <div style="display: block;" class=" pb-3 input-container">
+                      <div class="input-group">
+                          <div class="input-group-addon" style="border: none !important">
+                            <img src="./assets/loan/phone.svg" style="width: 25px !important;margin: 0px 6px;">Phone:
+                          </div>
+                         
+                      </div>
+                  </div>
+              </div>
+              <div style="display: block;" class="col-lg-8 col-xl-6 col-md-8 pb-3 input-container">
+                <div class="input-group">
+                    <input class="form-control" disabled value="{{phone}}" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+                </div>
+            </div>
+          </div>
+      </div>
+    
+      <!-- <div class="tab-pane" id="status">
+        <div class="row">
+            <div class="col-xl-3"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/loan-amount.svg" style="width: 25px !important;margin: 0px 6px;">Status :
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-10 offset-1 offset-sm-0 offset-md-0 offset-lg-0 ">
+              <div  style="border:2px solid #ffd500; border-radius:10px;  padding:20px 10px; padding-bottom: 24px;">
+                
+                <span>{{data1.loanStatus}}</span><br><br>
+                <span>{{data1.message}}</span>
+    
+            </div>
+          </div>
+        </div>
+        
+      </div> -->
+    
+      
+      <div class="tab-pane" id="account">
+        <h6><a href="branchOfficer">BO Portal</a></h6>
+        
+        
+      </div>
+    
+    
+      <div class="tab-pane" id="security">
+        <h6 class="pb-4 pt-3">Change Password</h6>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/old-pass.svg" style="width: 25px !important;margin: 0px 6px;">Old Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Old Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/pass.svg" style="width: 25px !important;margin: 0px 6px;">New Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="New Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+          <div class="row">
+            <div class="col-xl-4"> 
+                  <div style="display: block;" class=" pb-3 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="border: none !important">
+                          <img src="./assets/loan/retype-pas.svg" style="width: 25px !important;margin: 0px 6px;">Confirm Password:
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="display: block;" class="col-lg-8 col-xl-6 pb-3 input-container">
+              <div class="input-group">
+                  <input class="form-control" disabled placeholder="Confirm Password" style="border: 2px solid #ffd500!important;padding:auto 20px; border-radius: 8px; background: #fff!important;" />
+              </div>
+          </div>
+      </div>
+        
+      </div>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+</div>
+<br><br>

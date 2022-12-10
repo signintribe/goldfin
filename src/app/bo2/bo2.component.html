@@ -1,0 +1,439 @@
+<div class="container">
+
+    <div class="col-xl-6 offset-xl-3" style="margin-top: 5rem;">
+        <p class="text-center"><span class="h4 mb-4" style="color:#ffd500"><b>BS Portal</b></span> </p>
+
+    </div>
+    <br>
+    <div class="col-xl-12 offset-xl-3" style="margin-left: 0% !important;">
+        <div class="input-group">
+            <div class="col-xl-3 offset-xl-3" style="margin-left: 0% !important;">
+
+            </div>
+            <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                <input name="search" [(ngModel)]="searchText" type="text" class="form-control" placeholder="Search CNIC"
+                    style="padding: 23px 10px;">
+            </div>
+            <div class="col-xl-4 offset-xl-3" style="margin-left: 0% !important;">
+                <div class="dropdown" style="padding-left: 25px;">
+                    Filter by Status :
+                    <select
+                        style="background-color: #fff;padding : 14px 10px !important;box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #e6ecef;"
+                        name="status" [(ngModel)]="searchText">
+                        <option value="" selected>All</option>
+                        <option value="PENDING">PENDING</option>
+                        <option value="Approve">Approve</option>
+                        <option value="Discrepant">Discrepant</option>
+                        <option value="Decline">Decline</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xl-3 offset-xl-3" style="margin-left: 0% !important;">
+
+            </div>
+            <div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+                <a style="height: 40px;" class="btn btn-default btn-sm" href="due_payments">Due Accounts</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a style="height: 40px" class="btn btn-default btn-sm" href="planVisits">Customer Vists</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-xl-7 offset-xl-3" style="margin-left: 0% !important;">
+    <a style="height: 40px;" class="btn btn-default btn-sm" (click)="getdirectBOForms = false">From CSO</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a style="height: 40px" class="btn btn-default btn-sm" (click)="getdirectBOForms = true">From BO</a>
+</div>
+
+<div *ngIf="!getdirectBOForms">
+    <div class="loader" *ngIf="!data.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5" style="overflow-x:auto; padding: 19px 30px; ">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name
+                                </th>
+                                <th class="column2"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column3"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession
+                                </th>
+                                <th class="column4"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View LAF</th>
+                                <th class="column5"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current
+                                    Status</th>
+                                <th class="column6"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Assign VO
+                                </th>
+                                <th class="column7"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CMO Feedback
+                                </th>
+                                <th class="column8"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">VO Feedback
+                                </th>
+                                <th class="column9"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View
+                                    Documents</th>
+                                <th class="column10"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding-right: px;">Approve /
+                                    Reject</th>
+                                <th class="column11"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Eligibility
+                                </th>
+                                <th class="column12"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited
+                                    Date</th>
+                                <th class="column13"> &nbsp;&nbsp;&nbsp;Loan Summary</th>
+                                <th class="column14">Forward to CSO</th>
+                                <th class="column15">Print Loan Summary</th>
+                                <th class="column16">Print VO Form</th>
+                                <th class="column17">Print CMO Form</th>
+                                <!-- <th class="column14" *ngIf="data.data.directBO == 'true' ">Forward to CSO</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr
+                                *ngFor="let event of data.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1"><img src="assets/update.png" style="width:25px;"
+                                        *ngIf="event.isUpdated == true" /> &nbsp;{{event.fullname}}</td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                <td class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br>
+                                    <b>Reason</b> : <br> {{event.reason}}</td>
+                                <td class="column6"
+                                    *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'">
+                                    <select #mySelect matInput [(ngModel)]="event.vo"
+                                        (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+                                <td class="column6"
+                                    *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'">
+                                    <select disabled #mySelect matInput [(ngModel)]="event.vo"
+                                        (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+                                <td class="column7"><a href="cmofeedback/{{event._id}}" class="btn">View</a></td>
+                                <td class="column8"><a href="vofeedback/{{event._id}}" class="btn">View</a></td>
+                                <td class="column9"><a href="viewDocuments/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"
+                                    class="column10">
+                                    <select disabled #mySelect1 [(ngModel)]="event.loanStatus"
+                                        (change)='onOptionsSelected1(event._id,mySelect1.value)'>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="Decline">Decline</option>
+                                        <option value="Approve">Approve</option>
+                                        <option value="Discrepant">Discrepant</option>
+                                    </select>
+                                </td>
+
+                                <td *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'"
+                                    class="column10">
+                                    <select #mySelect1 [(ngModel)]="event.loanStatus"
+                                        (change)='onOptionsSelected1(event._id,mySelect1.value)'>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="Decline">Decline</option>
+                                        <option value="Approve">Approve</option>
+                                        <option value="Discrepant">Discrepant</option>
+                                    </select>
+                                </td>
+
+                                <td class="column11"><a href="eligibility/{{event._id}}" class="btn">View</a></td>
+                                <td class="column12">{{event.createdAt}}</td>
+                                <td *ngIf="event.dueDate != null " class="column13"><a
+                                        href="addLoanSummary/{{event._id}}" class="btn">View Loan Summary</a></td>
+                                <td *ngIf="event.dueDate == null " class="column13"><a
+                                        href="addLoanSummary/{{event._id}}" class="btn">Add Loan Summary</a></td>
+                                <td class="column14"
+                                    *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'">
+                                    <select disabled #mySelect12 [(ngModel)]="event.directCSO"
+                                        (change)='onOptionsSelected11(event._id,mySelect12.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+                                <td class="column14"
+                                    *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'">
+                                    <select #mySelect12 [(ngModel)]="event.directCSO"
+                                        (change)='onOptionsSelected11(event._id,mySelect12.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+                                <td class="column15"><a href="printLoanSummary/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <td class="column16"><a href="voPrint/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <td class="column17"><a href="cmoPrint/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <!-- <td class="column14"  *ngIf="event.directBO == 'true' ">
+                                       
+                                    </td> -->
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
+
+<div *ngIf="getdirectBOForms">
+    <div class="loader" *ngIf="!data.data"></div>
+    <div class="limiter">
+        <div class="container-fluid mt-5 mb-5" style="overflow-x:auto; padding: 19px 30px; ">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead style="position:sticky;">
+                            <tr class="table100-head">
+                                <th class="column1" style="border-right: 1px solid rgb(255 255 255 / 39%);">Full Name
+                                </th>
+                                <th class="column2"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CNIC</th>
+                                <th class="column3"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Profession
+                                </th>
+                                <th class="column4"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View LAF</th>
+                                <th class="column5"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Current
+                                    Status</th>
+                                <th class="column6"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Assign VO
+                                </th>
+                                <th class="column7"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">CMO Feedback
+                                </th>
+                                <th class="column8"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">VO Feedback
+                                </th>
+                                <th class="column9"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">View
+                                    Documents</th>
+                                <th class="column10"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding-right: px;">Approve /
+                                    Reject</th>
+                                <th class="column11"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Eligibility
+                                </th>
+                                <th class="column12"
+                                    style="border-right: 1px solid rgb(255 255 255 / 39%); padding: 10px;">Form Submited
+                                    Date</th>
+                                <th class="column13"> &nbsp;&nbsp;&nbsp;Loan Summary</th>
+                                <th class="column14">Forward to CSO</th>
+                                <th class="column15">Print Loan Summary</th>
+                                <th class="column16">Print VO Form</th>
+                                <th class="column17">Print CMO Form</th>
+                                <th class="column18 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr
+                                *ngFor="let event of data20.data | filter:searchText | paginate: { itemsPerPage: 10, currentPage: p };">
+                                <td class="column1">                                     
+                                    <img src="assets/update.png" style="width:25px;" *ngIf="event.isUpdated == true" />&nbsp;
+                                    <span class="badge badge-danger" style="font-size: 8px" *ngIf="event.rollup === '1'">Rollup</span>
+                                    &nbsp; <s *ngIf="event.remainingLoan <= 0">{{event.fullname}}</s>
+                                    <p *ngIf="!event.remainingLoan || event.remainingLoan > 0">{{event.fullname}}</p>
+                                </td>
+                                <td class="column2">{{event.cnic}}</td>
+                                <td class="column3">&nbsp;&nbsp;{{event.profession}}</td>
+                                <td class="column4"><a href="lafView/{{event._id}}" class="btn">View</a></td>
+                                <td class="column5" *ngIf="event.reason == 'no'">{{event.loanStatus}} &nbsp;</td>
+                                <td class="column5" *ngIf="event.reason != 'no'">{{event.loanStatus}} &nbsp;<br>
+                                    <b>Reason</b> : <br> {{event.reason}}</td>
+                                <td class="column6"
+                                    *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'">
+                                    <select disabled #mySelect [(ngModel)]="event.vo"
+                                        (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td class="column6"
+                                    *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'">
+                                    <select #mySelect [(ngModel)]="event.vo"
+                                        (change)='onOptionsSelected(event._id,mySelect.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+                                <td class="column7"><a href="cmofeedback/{{event._id}}" class="btn">View</a></td>
+                                <td class="column8"><a href="vofeedback/{{event._id}}" class="btn">View</a></td>
+                                <td class="column9"><a href="viewDocuments/{{event._id}}" class="btn">View</a></td>
+                                <td *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'"
+                                    class="column10">
+                                    <select disabled #mySelect1 [(ngModel)]="event.loanStatus"
+                                        (change)='onOptionsSelected1(event._id,mySelect1.value)'>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="Decline">Decline</option>
+                                        <option value="Approve">Approve</option>
+                                        <option value="Discrepant">Discrepant</option>
+                                    </select>
+                                </td>
+
+                                <td *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'"
+                                    class="column10">
+                                    <select #mySelect1 [(ngModel)]="event.loanStatus"
+                                        (change)='onOptionsSelected1(event._id,mySelect1.value)'>
+                                        <option value="PENDING">Pending</option>
+                                        <option value="Decline">Decline</option>
+                                        <option value="Approve">Approve</option>
+                                        <option value="Discrepant">Discrepant</option>
+                                    </select>
+                                </td>
+
+                                <td class="column11"><a href="eligibility/{{event._id}}" class="btn">View</a></td>
+                                <td class="column12">{{event.createdAt}}</td>
+                                <td *ngIf="event.dueDate != null " class="column13"><a
+                                        href="addLoanSummary/{{event._id}}" class="btn">View Loan Summary</a></td>
+                                <td *ngIf="event.dueDate == null " class="column13"><a
+                                        href="addLoanSummary/{{event._id}}" class="btn">Add Loan Summary</a></td>
+
+                                <td class="column14"
+                                    *ngIf="event.loanStatus == 'Approve' || event.loanStatus == 'Decline'">
+                                    <select disabled #mySelect12 [(ngModel)]="event.directCSO"
+                                        (change)='onOptionsSelected11(event._id,mySelect12.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+                                <td class="column14"
+                                    *ngIf="event.loanStatus == 'Discrepant' || event.loanStatus == 'PENDING'">
+                                    <select #mySelect12 [(ngModel)]="event.directCSO"
+                                        (change)='onOptionsSelected11(event._id,mySelect12.value)'>
+                                        <option value="false">None</option>
+                                        <option value="true">Assign</option>
+                                        <option value="false">Un Assign</option>
+                                    </select>
+                                </td>
+
+
+                                <td class="column15"><a href="printLoanSummary/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <td class="column16"><a href="voPrint/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <td class="column17"><a href="cmoPrint/{{event._id}} " target='_blank'
+                                        class="btn">Print</a></td>
+                                <!-- <td class="column17"><a href="cmoPrint/{{event._id}} " target='_blank' class="btn">Close</a></td> -->
+                                <td>
+                                    <div class="btn-group px-2">
+                                        
+                                        <a class="btn btn-xs btn-danger text-white" *ngIf="!event.remainingLoan || event.remainingLoan > 0" data-toggle="modal" (click)="showModal(event._id, event.remainingLoan)" data-target="#exampleModalCenter">
+                                            Add Loan
+                                        </a>
+                                        <a *ngIf="event.remainingLoan == 0 || event.remainingLoan < 0" target='_blank' class="btn btn-danger text-white btn-xs">Closed</a>
+                                    
+                                        <a class="btn btn-xs btn-info text-white" data-toggle="modal" (click)="editUserData(event._id)" data-target="#editModalCenter">
+                                            Edit
+                                        </a>
+                                    
+                                        <a class="btn btn-xs btn-primary text-white" (click)="rollUp(event._id)" *ngIf="!event.rollup ||  event.rollup == null || event.rollup == undefined || event.rollup !== '1' ">
+                                            RollUp
+                                        </a>
+
+                                    </div>                            
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls style="background: #f3cb00;" (pageChange)="p = $event"></pagination-controls>
+
+                    <!-- Add Loan Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header" style="background: #F3CB00;">
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Add Loan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="totalLoan">Total Loan</label>
+                                <input class="form-control" id="totalLoan" type="text" readonly [(ngModel)] = "loanAmount"  style="background: #F3CB00;color:black;"><br>
+                                <label for="remainingLoan">Remaining Loan</label>
+                                <input class="form-control" id="remainingLoan" placeholder="Please add only remaining loan at first time and 'Add' it." type="text" [(ngModel)]="addLoanData.remainingLoan" style="border-color: grey;"><br>
+                                <label for="addLoan">Add Loan</label>
+                                <input class="form-control" id="addLoan" type="text" [(ngModel)]="addLoanData.addLoan" style="border-color: grey;">
+                            </div>
+                            <div class="modal-footer">
+                              <a class="btn" data-dismiss="modal">Close</a>
+                              <a class="btn" (click)="addLoan()" data-dismiss="modal">Add</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header" style="background: #F3CB00;">
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Edit User Data</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="totalLoan">Fullname</label>
+                                <input class="form-control" id="fullname" type="text" [(ngModel)]="editData.fullname"  style="border-color: grey;"><br>
+                                <label for="remainingLoan">Username</label>
+                                <input class="form-control" id="userName" type="text" [(ngModel)]="editData.userName"  style="border-color: grey;"><br>
+                                <label for="addLoan">Cnic</label>
+                                <input class="form-control" id="cnic" type="text" [(ngModel)]="editData.cnic" style="border-color: grey;">
+                                <label for="addLoan">Current Address</label>
+                                <input class="form-control" id="currentaddress" type="text" [(ngModel)]="editData.currentaddress"  style="border-color: grey;">
+                            </div>
+                            <div class="modal-footer">
+                              <a class="btn" data-dismiss="modal">Close</a>
+                              <a class="btn" (click)="submitEditData()" data-dismiss="modal">Update</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,1152 @@
+<div *ngIf="profession">
+
+  <div class="container" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-repeat: no-repeat, repeat;" >
+      
+    <select class="no-print" (change)="selectChangeHandler($event)">
+      <option value="goldfin">Goldfin</option>
+      <option value="alfalah">Goldfin & Bank Alfalah</option>
+      <option value="Tez">Tez Financial</option>
+  </select>
+    <span *ngIf= "selectedDay === 'goldfin'">
+      <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+    </span>  
+    <span *ngIf= "selectedDay === 'alfalah'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+  <span *ngIf= "selectedDay === 'Tez'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+  <br>
+  <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br>
+  <form action="#">
+      <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Personal Information</h4></div><br>
+  
+    <div class="row">
+    <div class="col-md-4">
+      <label for="fullname"><b>Customer Name</b></label>
+      <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data1[0].fullname">
+    </div>
+    <div class="col-md-4">
+      <label for="cnic"><b>CNIC</b></label>
+      <input type="text" disabled id="cnic" name="cnic" [(ngModel)]="data1[0].cnic">
+    </div>
+    <div class="col-md-4">
+      <label for="profession1"><b>LOAN APPLICATION FORM TYPE</b></label><br>
+      <span><input type="checkbox" disabled id="profession1" name="profession1" > Business</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span ><input type="checkbox" disabled="disabled" id="profession2" name="profession2" class="myinput" [(ngModel)]="profession"> Salaried</span>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+          <label for="purpose"><b>PURPOSE OF LOAN</b></label>
+          <input type="text" disabled id="purpose" name="purpose" [(ngModel)]="data.purpose">
+        </div>
+        <div class="col-md-4">
+          <label for="city"><b>CITY</b></label>
+          <input type="text" disabled id="city" name="city" [(ngModel)]="data.city">
+        </div>
+        <div class="col-md-4">
+          <label for="fname"><b>FATHER NAME / HUSBAND NAME</b></label>
+          <input type="text" disabled id="fname" name="fname" [(ngModel)]="data.fname" >
+        </div>
+  </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="dob"><b>DATE OF BIRTH</b></label>
+          <input type="text" disabled id="dob" name="dob" [(ngModel)]="data.dob">
+        </div>
+        <div class="col-md-4">
+          <label for="currentaddress"><b>RESIDENTIAL ADDRESS</b></label>
+          <textarea disabled id="currentaddress" name="currentaddress" [(ngModel)]="data.currentaddress" rows="3"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label for="residentialstatus"><b>RESIDENTIAL STATUS</b></label>
+          <input type="text" disabled id="residentialstatus" name="residentialstatus" [(ngModel)]="data.residentialstatus">
+        </div>
+      </div>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="residingsince"><b>RESIDING SINCE</b></label>
+      <input type="text" disabled id="residingsince" name="residingsince" [(ngModel)]="data.residingsince">
+    </div>
+    <div class="col-md-4">
+      <label for="permanentaddress"><b>PERMANENT ADDRESS</b></label>
+      <textarea disabled id="permanentaddress" name="permanentaddress" [(ngModel)]="data.permanentaddress" rows="3"></textarea>
+    </div>
+    <div class="col-md-4">
+      <label for="othermobilenum"><b>OTHER MOBILE NUMBER</b></label>
+      <input type="text" disabled id="othermobilenum" name="othermobilenum" [(ngModel)]="data.othermobilenum">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label for="gender"><b>GENDER</b></label>
+      <input type="text" disabled id="gender" name="gender" [(ngModel)]="data.gender">
+    </div>
+    <div class="col-md-4">
+      <label for="maritalstatus"><b>MARITAL STATUS</b></label>
+      <input type="text" disabled id="maritalstatus" name="maritalstatus" [(ngModel)]="data.maritalstatus">
+    </div>
+    <div class="col-md-4">
+      <label for="education"><b>EDUCATION</b></label>
+      <input type="text" disabled id="education" name="education" [(ngModel)]="data.education">
+    </div>
+  </div>
+  
+  <br>
+  <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Professional Information</h4></div><br>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <label for="profession"><b>PROFESSION</b></label>
+      <input type="text" disabled id="profession" name="profession" [(ngModel)]="data.profession">
+    </div>
+    <div class="col-md-4">
+      <label for="designation"><b>DESIGNATION</b></label>
+      <input type="text" disabled id="designation" name="designation" [(ngModel)]="data.designation">
+    </div>
+      <div class="col-md-4">
+        <label for="empname"><b>EMPLOYER NAME</b></label>
+        <input type="text" disabled id="empname" name="empname" [(ngModel)]="data.empname">
+      </div>
+  </div>
+  <!-- <div class="row">
+  </div> -->
+  <div class="row">
+    <div class="col-md-4">
+      <label for="empaddress"><b>EMPLOYER ADDRESS</b></label>
+      <input type="text" disabled id="empaddress" name="empaddress" [(ngModel)]="data.empaddress">
+    </div>
+    <div class="col-md-4">
+      <label for="phone"><b>PHONE</b></label>
+      <input type="text" disabled id="phone" name="phone" [(ngModel)]="data.phone">
+    </div>
+
+      <div class="col-md-4">
+        <label for="website"><b>WEBSITE</b></label>
+        <input type="text" disabled id="website" name="website" [(ngModel)]="data.website">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="jobstatus"><b>JOB STATUS</b></label>
+      <input type="text" disabled id="jobstatus" name="jobstatus" [(ngModel)]="data.jobstatus">
+    </div>
+    <div class="col-md-4">
+      <label for="dateofjoining"><b>DATE OF JOINING</b></label>
+      <input type="text" disabled id="dateofjoining" name="dateofjoining" [(ngModel)]="data.dateofjoining">
+    </div>
+    <div class="col-md-4">
+      <label for="totalexp"><b>TOTAL WORKING EXPERIENCE</b></label>
+      <input type="text" disabled id="totalexp" name="totalexp" [(ngModel)]="data.totalexp">
+    </div>
+  </div><br>
+ 
+  <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Financial Information</h4></div><br>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="grosssalary"><b>CURRENT GROSS SALARY</b></label>
+      <input type="text" disabled id="grosssalary" name="grosssalary" [(ngModel)]="data.grosssalary" style="text-align: right !important;">
+    </div>
+    <div class="col-md-4">
+      <label for="netsalary"><b>CURRENT NET SALARY</b></label>
+      <input type="text" disabled id="netsalary" name="netsalary" [(ngModel)]="data.netsalary" style="text-align: right !important;">
+    </div>
+  
+      <div class="col-md-4">
+        <label for="othersource"><b>ANY OTHER SOURCE OF INCOME</b></label>
+        <input type="text" disabled id="othersource" name="othersource" [(ngModel)]="data.othersource" style="text-align: right !important;">
+      </div>
+  </div>
+  <!-- <div class="row">
+  </div> -->
+  <div class="row">
+    <div class="col-md-4">
+      <label for="desiredLoanAmount"><b>ENTER DESIRED LOAN AMOUNT</b></label>
+      <input type="text" disabled id="desiredLoanAmount" name="desiredLoanAmount" [(ngModel)]="data.desiredLoanAmount" style="text-align: right !important;">
+    </div>
+    <div class="col-md-4">
+      <label for="natureofincome"><b>NATURE OF OTHER INCOME</b></label>
+      <input type="text" disabled id="natureofincome" name="natureofincome" [(ngModel)]="data.natureofincome">
+    </div>
+    <div class="col-4">
+      <label for="outstandingloan"><b>OUTSTANDING LOANS</b></label>
+      <input type="text" disabled id="outstandingloan" name="outstandingloan" [(ngModel)]="data.outstandingloan">
+    </div>
+  </div><br>
+<div class="row" *ngIf="married">
+    <div class="col-md-6">
+      <label for="sourceofloan"><b>SOURCE OF LOAN</b></label>
+      <input type="text" disabled id="sourceofloan" name="sourceofloan" [(ngModel)]="data.sourceofloan">
+    </div>
+    <div class="col-md-6">
+      <label for="outstandingloanamount"><b>OUTSTANDING LOAN AMOUNT</b></label>
+      <input type="text" disabled id="outstandingloanamount" name="outstandingloanamount" [(ngModel)]="data.outstandingloanamount" style="text-align: right !important;">
+    </div>
+  </div>
+  <div class="jkl"></div>
+  <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+     
+    <span *ngIf= "selectedDay === 'goldfin'">
+      <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+    </span>  
+    <span *ngIf= "selectedDay === 'alfalah'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+  <span *ngIf= "selectedDay === 'Tez'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px;  ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+    <br><br>
+  <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br>
+  </div>
+  
+  
+  <!-- <div class="row" *ngIf="!married">
+  </div> -->
+  <!-- <div class="jkl"></div>
+  <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+      
+    <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+    <br><br><br>
+  <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+  </div> -->
+  <div style="background-color:#ffc91a;height:40px;width: 425px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Average monthly House Hold Expenses</h4></div><br>
+  <table class="table table-bordered">
+    <tbody>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0"><p class="pb-0"> <b> HOUSE HOLD </b></p></th>
+        <td class="p-0"> <input type="text" disabled [(ngModel)]="data.household" name="household" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p ><b>HOUSE RENT</b></p></th>
+        <td class="p-0"> <input type="text" disabled [(ngModel)]="data.houserent" name="houserent" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p > <b> UTILITY BILLS</b></p></th>
+        <td class="p-0">  <input type="text" disabled [(ngModel)]="data.utilitybill" name="utilitybill" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee! important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p > <b> CHILDREN EDUCATION </b></p></th>
+        <td class="p-0"> <input type="text" disabled [(ngModel)]="data.childeducation" name="childeducation" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p ><b>MEDICAL</b></p></th>
+        <td class="p-0"> <input type="text" disabled [(ngModel)]="data.medical" name="medical" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p > <b> COMMITTEE </b></p></th>
+        <td class="p-0"><input type="text" disabled [(ngModel)]="data.committe" name="committe" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p > <b> LOAN INSTALLMENT</b></p></th>
+        <td class="p-0"> <input type="text" disabled [(ngModel)]="data.loaninstallment" name="loaninstallment" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee !important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p> <b> MISC</b></p></th>
+        <td class="p-0"><input type="text" disabled [(ngModel)]="data.other0" name="other0" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+      <tr class="pb-0">
+        <th scope="row" class="pb-0" ><p > <b> Total Expenses</b></p></th>
+        <td class="p-0"><input type="text" disabled [(ngModel)]="data.totalexpense" name="totalexpense" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- <div class="row">
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">HOUSE HOLD</p>
+      <input type="text" disabled [(ngModel)]="data.household" name="household" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">HOUSE RENT</p>
+      <input type="text" disabled [(ngModel)]="data.houserent" name="houserent" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">CHILDREN EDUCATION</p>
+      <input type="text" disabled [(ngModel)]="data.childeducation" name="childeducation" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">UTILITY BILLS</p>
+      <input type="text" disabled [(ngModel)]="data.utilitybill" name="utilitybill" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">MEDICAL</p>
+      <input type="text" disabled [(ngModel)]="data.medical" name="medical" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">COMMITTEE</p>
+      <input type="text" disabled [(ngModel)]="data.committe" name="committe" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">LOAN INSTALLMENT</p>
+      <input type="text" disabled [(ngModel)]="data.loaninstallment" name="loaninstallment" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">MISC</p>
+      <input type="text" disabled [(ngModel)]="data.other0" name="other0" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+    <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+      <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Total Expenses</p>
+      <input type="text" disabled [(ngModel)]="data.totalexpense" name="totalexpense" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+    </div>
+  </div> -->
+  <br>
+  <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 15%; padding-top: 5px;">Documents</h4></div><br>
+
+  <!-- <div class="row">
+    <div class="col-4">
+      <label for="cnicFront"><b>Front CNIC</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicFront}}">
+    </div>
+    <div class="col-4">
+      <label for="cnicBack"><b>Back CNIC</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicBack}}">
+    </div>
+    <div class="col-4">
+      <label for="residenceUtilityBills"><b>Residence Utility Bills</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.residenceUtilityBills}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-4">
+      <label for="currentSalarySlip"><b>Current Salary Slip</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.currentSalarySlip}}">
+    </div>
+    <div class="col-4">
+      <label for="jobCertificate"><b>Job Certificate</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.jobCertificate}}">
+    </div>
+    <div class="col-4">
+      <label for="experienceLetter"><b>Experience Letter</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.experienceLetter}}">
+    </div> 
+
+  </div> -->
+  <div class="row">
+    <div class="col-4" *ngIf="data.cnicFront">
+      <label for="cnicFront"><b>Front CNIC</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicFront}}">
+    </div>
+    <div class="col-4" *ngIf="data.cnicBack">
+      <label for="cnicBack"><b>Back CNIC</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicBack}}">
+    </div>
+    <div class="col-4" *ngIf="data.residenceUtilityBills">
+      <label for="residenceUtilityBills"><b>Residence Utility Bills</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.residenceUtilityBills}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    
+    <div class="col-4" *ngIf="data.currentSalarySlip">
+      <label for="currentSalarySlip"><b>Current Salary Slip</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.currentSalarySlip}}">
+    </div>
+    <div class="col-4" *ngIf="data.jobCertificate">
+      <label for="jobCertificate"><b>Job Certificate</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.jobCertificate}}">
+    </div>
+
+    <div class="col-4" *ngIf="data.experienceLetter">
+      <label for="experienceLetter"><b>Experience Letter</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.experienceLetter}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-4" *ngIf="data.NTN">
+      <label for="cnicFront"><b>Finance Agreement 1</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.NTN}}">
+    </div>
+    <div class="col-4" *ngIf="data.SECP">
+      <label for="cnicBack"><b>Finance Agreement 2</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.SECP}}">
+    </div>
+    <div class="col-4" *ngIf="data.facilityLetter">
+      <label for="residenceUtilityBills"><b>Facility Letter</b></label>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.facilityLetter}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-4" *ngIf="data.loanApp1">
+      <label for="cnicFront"><b>Loan Application 1</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.loanApp1}}">
+    </div>
+    <div class="col-4" *ngIf="data.loanApp2">
+      <label for="cnicBack"><b>Loan Application 2</b></label><br>
+      <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.loanApp2}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoName"><b>Customer Name</b></label>
+    </div>
+    <div class="col-md-10">
+      <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data1[0].fullname">
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoId4"><b>Customer Signature</b></label>
+    </div>
+    <div class="col-md-4">
+      
+      <textarea disabled rows="4"></textarea>
+    </div>
+    <div class="col-md-2">
+      <label for="csoId2"><b>Customer Thumb Print</b></label>
+    </div>
+    <div class="col-md-4">
+      
+      <textarea disabled rows="4"></textarea>
+    </div>
+  </div>
+
+  <div class="jkl"></div>
+  <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+    
+    <span *ngIf= "selectedDay === 'goldfin'">
+      <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+    </span>  
+    <span *ngIf= "selectedDay === 'alfalah'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+  <span *ngIf= "selectedDay === 'Tez'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+    <br><br><br>
+  <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+  </div>
+  <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Office Work (ONLY)</h4></div><br><br>
+  
+  <!-- <div class="row">
+  <div class="col-25">
+    <label for="csoName"><b>CSO Name</b></label>
+  </div>
+  <div class="col-75">
+    <input type="text" disabled id="csoName" name="csoName" [(ngModel)]="data1[0].csoName">
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-25">
+    <label for="csoId"><b>CSO Code</b></label>
+  </div>
+  <div class="col-75">
+    <input type="text" disabled id="csoId" name="csoId" [(ngModel)]="data1[0].csoId">
+  </div>
+  </div> -->
+  
+  
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoName"><b>CSO Name</b></label>
+    </div>
+    <div class="col-md-4" >
+      <input type="text" disabled id="csoName" name="csoName" [(ngModel)]="data1[0].csoName">
+    </div>
+    <div class="col-md-2">
+      <label for="csoId"><b>CSO Code</b></label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" disabled id="csoId" name="csoId" [(ngModel)]="data1[0].csoId">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoIr4d2"><b>CSO Signature</b></label>
+    </div>
+    <div class="col-md-4">
+      
+      <textarea disabled rows="4"></textarea>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-2">
+      <label for="bsname"><b>BS Name</b></label>
+    </div>
+    <div class="col-md-4" >
+      <input type="text" disabled id="bsname" name="bsname" [(ngModel)]="data1[0].bsName">
+    </div>
+    <div class="col-md-2">
+      <label for="cso12Id"><b>BS Code</b></label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" disabled id="bsId" name="bsId" [(ngModel)]="data1[0].bsId">
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoI3d2"><b>BS Signature</b></label>
+    </div>
+    <div class="col-md-4">
+      
+      <textarea disabled rows="4"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="bsname"><b>BO Name</b></label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" disabled id="boname" name="boname" [(ngModel)]="data1[0].boName">
+    </div>
+    <div class="col-md-2">
+      <label for="cso12Id"><b>BO Code</b></label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" disabled id="boId" name="boId" [(ngModel)]="data1[0].boId">
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="csoI3d2"><b>BO Signature</b></label>
+    </div>
+    <div class="col-md-4">
+      
+      <textarea disabled rows="4"></textarea>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-25">
+    <label for="today1"><b>Date</b></label>
+  </div>
+  <div class="col-75">
+    <input type="text" disabled id="today1" name="today1" [(ngModel)]="today1">
+  </div>
+  </div>
+  <br><br><br> <br><br><br>
+  <br><br><br> <br><br><br>
+  <br><br><br> <br><br><br>
+  <br><br><br> <br><br><br>
+  
+  </form>
+  </div>
+  
+  </div>
+
+  
+  <div *ngIf="profession1">
+
+  
+      <div class="container" style="background-position-y: center;background-size: contain; background-blend-mode: overlay;  background-repeat: no-repeat, repeat;" >
+        
+        <select class="no-print" (change)="selectChangeHandler($event)">
+          <option value="goldfin">Goldfin</option>
+          <option value="alfalah">Goldfin & Bank Alfalah</option>
+          <option value="Tez">Tez Financial</option>
+          
+      </select>
+        <span *ngIf= "selectedDay === 'goldfin'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+        </span>  
+        <span *ngIf= "selectedDay === 'alfalah'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+      <span *ngIf= "selectedDay === 'Tez'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+        <br>
+      <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br>
+      <form action="#">
+          <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Personal Information</h4></div>
+      
+          <div class="row">
+        <div class="col-md-4">
+          <label for="fullname"><b>Customer Name</b></label>
+          <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data1[0].fullname">
+        </div>
+        <div class="col-md-4">
+          <label for="cnic"><b>CNIC</b></label>
+          <input type="text" disabled id="cnic" name="cnic" [(ngModel)]="data1[0].cnic">
+        </div>
+        <div class="col-md-4">
+          <label for="profession1"><b>LOAN APPLICATION FORM TYPE</b></label><br>
+          <span><input type="checkbox" disabled id="profession1" name="profession1" [(ngModel)]="profession1" > Business</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span ><input type="checkbox" disabled="disabled" id="profession2" name="profession2" class="myinput"> Salaried</span>
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        <div class="col-md-4">
+          <label for="purpose"><b>PURPOSE OF LOAN</b></label>
+          <input type="text" disabled id="purpose" name="purpose" [(ngModel)]="data.purpose">
+        </div>
+        <div class="col-md-4">
+          <label for="city"><b>CITY</b></label>
+          <input type="text" disabled id="city" name="city" [(ngModel)]="data.city">
+        </div>
+        <div class="col-md-4">
+          <label for="fname"><b>FATHER NAME / Husband Name</b></label>
+          <input type="text" disabled id="fname" name="fname" [(ngModel)]="data.fname" >
+        </div>
+        
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        <div class="col-md-4">
+          <label for="dob"><b>DATE OF BIRTH</b></label>
+          <input type="text" disabled id="dob" name="dob" [(ngModel)]="data.dob">
+        </div>
+        <div class="col-md-4">
+          <label for="currentaddress"><b>RESIDENTIAL ADDRESS</b></label>
+          <textarea disabled id="currentaddress" name="currentaddress" [(ngModel)]="data.currentaddress" rows="3"></textarea>
+        </div>
+        
+        <div class="col-md-4">
+          <label for="residentialstatus"><b>RESIDENTIAL STATUS</b></label>
+          <input type="text" disabled id="residentialstatus" name="residentialstatus" [(ngModel)]="data.residentialstatus">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      
+      <div class="row">
+        
+        <div class="col-md-4">
+          <label for="residingsince"><b>RESIDING SINCE</b></label>
+          <input type="text" disabled id="residingsince" name="residingsince" [(ngModel)]="data.residingsince">
+        </div>
+        <div class="col-md-4">
+          <label for="permanentaddress"><b>PERMANENT ADDRESS</b></label>
+          <textarea disabled id="permanentaddress" name="permanentaddress" [(ngModel)]="data.permanentaddress" rows="3"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label for="othermobilenum"><b>OTHER MOBILE NUMBER</b></label>
+          <input type="text" disabled id="othermobilenum" name="othermobilenum" [(ngModel)]="data.othermobilenum">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        
+        <div class="col-md-4">
+          <label for="gender"><b>GENDER</b></label>
+          <input type="text" disabled id="gender" name="gender" [(ngModel)]="data.gender">
+        </div>
+        <div class="col-md-4">
+          <label for="maritalstatus"><b>MARITAL STATUS</b></label>
+          <input type="text" disabled id="maritalstatus" name="maritalstatus" [(ngModel)]="data.maritalstatus">
+        </div>
+        <div class="col-md-4">
+          <label for="education"><b>EDUCATION</b></label>
+          <input type="text" disabled id="education" name="education" [(ngModel)]="data.education">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <!-- <div class="row">
+      </div> -->
+      
+      <br>
+      
+      <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Professional Information</h4></div><br>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <label for="profession"><b>PROFESSION</b></label>
+          <input type="text" disabled id="profession" name="profession" [(ngModel)]="data.profession">
+        </div>
+        <div class="col-md-4">
+          <label for="bussinessname"><b>BUSSINESS TITLE/NAME</b></label>
+          <input type="text" disabled id="bussinessname" name="bussinessname" [(ngModel)]="data.bussinessname">
+        </div>
+        <div class="col-md-4">
+          <label for="businessStatus"><b>BUSINESS STATUS</b></label>
+          <input type="text" disabled id="businessStatus" name="businessStatus" [(ngModel)]="data.businessStatus">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        <div class="col-md-4">
+          <label for="bussinessaddress"><b>BUSINESS ADDRESS</b></label>
+          <textarea disabled id="bussinessaddress" name="bussinessaddress" [(ngModel)]="data.bussinessaddress" rows="3"></textarea>
+        </div>
+        <div class="col-md-4">
+          <label for="bussinesslandline"><b>LANDLINE</b></label>
+          <input type="text" disabled id="bussinesslandline" name="bussinesslandline" [(ngModel)]="data.bussinesslandline">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="bussinesswebsite"><b>WEBSITE</b></label>
+          <input type="text" disabled id="bussinesswebsite" name="bussinesswebsite" [(ngModel)]="data.bussinesswebsite">
+        </div>
+        <div class="col-md-4">
+          <label for="bussinessOwnstatus"><b>STATUS</b></label>
+          <input type="text" disabled id="bussinessOwnstatus" name="bussinessOwnstatus" [(ngModel)]="data.bussinessOwnstatus">
+        </div>
+        <div class="col-md-4">
+          <label for="natureofbusiness"><b>NATURE OF BUSINESS</b></label>
+          <input type="text" disabled id="natureofbusiness" name="natureofbusiness" [(ngModel)]="data.natureofbusiness">
+        </div>
+      </div><br>
+
+      <div style="background-color:#ffc91a;height:40px;width: 285px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Professional Information</h4></div><br>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label for="companyname"><b>COMPANY NAME</b></label>
+          <input type="text" disabled id="companyname" name="companyname" [(ngModel)]="data.companyname">
+        </div>
+        <div class="col-md-4">
+          <label for="establishsince"><b>ESTABLISHED SINCE</b></label>
+          <input type="text" disabled id="establishsince" name="establishsince" [(ngModel)]="data.establishsince">
+        </div>
+        <div class="col-md-4">
+          <label for="secp"><b>SECP REGISTRATION NUMBER(IF REGISTER)</b></label>
+          <input type="text" disabled id="secp" name="secp" [(ngModel)]="data.secp">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label for="dateofreg"><b>DATE OF REGISTRATION</b></label>
+          <input type="text" disabled id="dateofreg" name="dateofreg" [(ngModel)]="data.dateofreg">
+        </div>
+
+        <div class="col-md-4">
+          <label for="ntn"><b>NTN IF FILER</b></label>
+          <input type="text" disabled id="ntn" name="ntn" [(ngModel)]="data.ntn">
+        </div>
+        <div class="col-md-4">
+          <label for="nbrofemp"><b>NUMBER OF EMPLOYEES</b></label>
+          <input type="text" disabled id="nbrofemp" name="nbrofemp" [(ngModel)]="data.nbrofemp" style="text-align: right !important;">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="jkl"></div>
+      <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+          
+        <span *ngIf= "selectedDay === 'goldfin'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+        </span>  
+        <span *ngIf= "selectedDay === 'alfalah'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+      <span *ngIf= "selectedDay === 'Tez'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+        <br><br>
+      <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br>
+      </div>
+
+      
+      <!-- <div class="jkl"></div>
+      <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+          
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+        <br><br><br>
+      <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+      </div> -->
+      <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">In case Agriculturist</h4></div><br>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <label for="working"><b>WORKING</b></label>
+          <input type="text" disabled id="working" name="working" [(ngModel)]="data.working">
+        </div>
+        <div class="col-md-4">
+          <label for="ownland"><b>OWN LAND (ACRES) </b></label>
+          <input type="text" disabled id="ownland" name="ownland" [(ngModel)]="data.ownland" style="text-align: right !important;">
+        </div>
+        <div class="col-md-4">
+          <label for="rentedland"><b>RENTED LAND (ACRES) </b></label>
+          <input type="text" disabled id="rentedland" name="rentedland" [(ngModel)]="data.rentedland" style="text-align: right !important;">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        <div class="col-md-4">
+          <label for="cultivating"><b>CULTIVATING SINCE</b></label>
+          <input type="text" disabled id="cultivating" name="cultivating" [(ngModel)]="data.cultivating" style="text-align: right !important;">
+        </div>
+        <div class="col-md-4">
+          <label for="animals"><b>ANIMALS</b></label>
+          <input type="text" disabled id="animals" name="animals" [(ngModel)]="data.animals">
+        </div>
+        <div class="col-md-4">
+          <label for="maincrops"><b>MAIN CROPS</b></label>
+          <input type="text" disabled id="maincrops" name="maincrops" [(ngModel)]="data.maincrops">
+        </div>
+      </div>
+  
+      
+      <br>
+      <!-- <div class="jkl"></div>
+      <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+          
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+        <br><br><br>
+      <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+      </div> -->
+      <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Financial Information</h4></div><br>
+      
+      
+      <div class="row">
+        <div class="col-md-4">
+            <!-- (BUSINESS PURCHASES, RENT, UTILITY, SALARIES, OTHER) -->
+          <label for="averagemonthbusinessexp"><b>AVERAGE MONTHLY BUSINESS EXPENSES </b></label>
+          <input type="text" disabled id="averagemonthbusinessexp" name="averagemonthbusinessexp" [(ngModel)]="data.averagemonthbusinessexp" style="text-align: right !important;">
+        </div>
+        <div class="col-md-4">
+          <label for="avgmonthturnover"><b>MONTHLY TURN OVER</b></label>
+          <input type="text" disabled id="avgmonthturnover" name="avgmonthturnover" [(ngModel)]="data.avgmonthturnover" style="text-align: right !important;">
+        </div>
+        <div class="col-md-4">
+          <label for="monthlyincome"><b>ANY OTHER MONTHLY INCOME</b></label>
+          <input type="text" disabled id="monthlyincome" name="monthlyincome" [(ngModel)]="data.monthlyincome" style="text-align: right !important;">
+        </div>
+      </div>
+      <!-- <div class="row">
+      </div> -->
+      <div class="row">
+        <div class="col-md-4">
+            <!-- (SAVING,RENTAL,COMMITE (ROSCA, RECEIVABLE) FROM LOAN ETC) -->
+          <label for="otherincome"><b>SOURCE OF OTHER INCOME </b></label>
+          <input type="text" disabled id="otherincome" name="otherincome" [(ngModel)]="data.otherincome" >
+        </div>
+        <div class="col-md-4">
+          <label for="monthlyaccounts"><b>DO YOU MAINTAIN MONTHLY ACCOUNTS</b></label>
+          <input type="text" disabled id="monthlyaccounts" name="monthlyaccounts" [(ngModel)]="data.monthlyaccounts">
+        </div>
+        <div class="col-md-4">
+          <label for="desiredLoanAmount"><b>DESIRED LOAN AMOUNT</b></label>
+          <input type="text" disabled id="desiredLoanAmount" name="desiredLoanAmount" [(ngModel)]="data.desiredLoanAmount" style="text-align: right !important;">
+        </div>
+      </div><br>
+
+      <div style="background-color:#ffc91a;height:40px;width: 425px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Financial Information</h4></div><br>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <label for="outstandingloan"><b>OUTSTANDING LOANS</b></label>
+          <input type="text" disabled id="outstandingloan" name="outstandingloan" [(ngModel)]="data.outstandingloan">
+        </div>
+        <div class="col-md-8">
+          <div class="row" *ngIf="married">
+            <div class="col-md-6">
+              <label for="sourceofloan"><b>SOURCE OF LOAN</b></label>
+              <input type="text" disabled id="sourceofloan" name="sourceofloan" [(ngModel)]="data.sourceofloan">
+            </div>
+            <div class="col-md-6">
+              <label for="outstandingloanamount"><b>OUTSTANDING LOAN AMOUNT</b></label>
+              <input type="text" disabled id="outstandingloanamount" name="outstandingloanamount" [(ngModel)]="data.outstandingloanamount" style="text-align: right !important;">
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+      <div style="background-color:#ffc91a;height:40px;width: 425px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Average monthly House Hold Expenses</h4></div><br><br>
+      
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0"><p class="pb-0"> <b> HOUSE HOLD </b></p></th>
+            <td class="p-0"> <input type="text" disabled [(ngModel)]="data.household1" name="household1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p ><b>HOUSE RENT</b></p></th>
+            <td class="p-0"> <input type="text" disabled [(ngModel)]="data.houserent1" name="houserent1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p > <b> UTILITY BILLS</b></p></th>
+            <td class="p-0">  <input type="text" disabled [(ngModel)]="data.utilitybills1" name="utilitybills1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px;  resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p > <b> CHILDREN EDUCATION </b></p></th>
+            <td class="p-0"> <input type="text" disabled [(ngModel)]="data.childeducation1" name="childeducation1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p ><b>MEDICAL</b></p></th>
+            <td class="p-0"> <input type="text" disabled [(ngModel)]="data.medical1" name="medical1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p > <b> COMMITTEE </b></p></th>
+            <td class="p-0"><input type="text" disabled [(ngModel)]="data.committee1" name="committee1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p > <b> LOAN INSTALLMENT</b></p></th>
+            <td class="p-0"> <input type="text" disabled [(ngModel)]="data.loaninstallment1" name="loaninstallment1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p> <b> MISC</b></p></th>
+            <td class="p-0"><input type="text" disabled [(ngModel)]="data.other3" name="other3" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+          <tr class="pb-0">
+            <th scope="row" class="pb-0" ><p > <b> Total Expenses</b></p></th>
+            <td class="p-0"><input type="text" disabled [(ngModel)]="data.totalexpense" name="totalexpense" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #dee4ee!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; resize: none;" ></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div class="row">
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">HOUSE HOLD</p>
+          <input type="text" disabled [(ngModel)]="data.household1" name="household1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">HOUSE RENT</p>
+          <input type="text" disabled [(ngModel)]="data.houserent1" name="houserent1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">UTILITY BILLS</p>
+          <input type="text" disabled [(ngModel)]="data.utilitybills1" name="utilitybills1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">CHILDREN EDUCATION</p>
+          <input type="text" disabled [(ngModel)]="data.childeducation1" name="childeducation1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">MEDICAL</p>
+          <input type="text" disabled [(ngModel)]="data.medical1" name="medical1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">COMMITTEE</p>
+          <input type="text" disabled [(ngModel)]="data.committee1" name="committee1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">LOAN INSTALLMENT</p>
+          <input type="text" disabled [(ngModel)]="data.loaninstallment1" name="loaninstallment1" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">MISC</p>
+          <input type="text" disabled [(ngModel)]="data.other3" name="other3" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+        <div class="col-4" style="display: flex; width: 100%; margin-bottom: 15px;">
+          <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Total Expenses</p>
+          <input type="text" disabled [(ngModel)]="data.totalexpense" name="totalexpense" placeholder="House hold Expense" style="text-align: right !important;display: block; width: 100%; height: calc(1.5em + .75rem + 2px); font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border-radius: .25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;border: 2px solid #FFD500!important; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding: 19px 30px; resize: none;" >
+        </div>
+      </div> -->
+  
+      
+      <div class="jkl"></div>
+      <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+         
+        <span *ngIf= "selectedDay === 'goldfin'">
+          <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+        </span>  
+        <span *ngIf= "selectedDay === 'alfalah'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+      <span *ngIf= "selectedDay === 'Tez'">
+        <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+      </span>
+        <br><br>
+      <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+      </div>
+      <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 15%; padding-top: 5px;">Documents</h4></div><br><br>
+      
+      <div class="row">
+        <div class="col-4">
+          <label for="cnicFront"><b>Front CNIC</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicFront}}">
+        </div>
+        <div class="col-4">
+          <label for="cnicBack"><b>Back CNIC</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.cnicBack}}">
+        </div>
+        <div class="col-4">
+          <label for="residenceUtilityBills"><b>Residence Utility Bills</b></label>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.residenceUtilityBills}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        
+        <div class="col-4">
+          <label for="residenceBusinessBills"><b>Business Utility Bills</b></label>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.residenceBusinessBills}}">
+        </div>
+        <div class="col-4">
+          <label for="proofOfBusiness"><b>Proof of Business</b></label>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.proofOfBusiness}}">
+        </div>
+
+        <div class="col-4">
+          <label for="proofOfBusinessIncome"><b>Proof of Business Income</b></label>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.proofOfBusinessIncome}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-4">
+          <label for="cnicFront"><b>Finance Agreement 1</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.NTN}}">
+        </div>
+        <div class="col-4">
+          <label for="cnicBack"><b>Finance Agreement 2</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.SECP}}">
+        </div>
+        <div class="col-4">
+          <label for="residenceUtilityBills"><b>Facility Letter</b></label>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.facilityLetter}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-4">
+          <label for="cnicFront"><b>Loan Application 1</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.loanApp1}}">
+        </div>
+        <div class="col-4">
+          <label for="cnicBack"><b>Loan Application 2</b></label><br>
+          <img style="margin-left: 20px; width: 300px; height: 170px;" src="{{baseURL}}/{{data.loanApp2}}">
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+        <div class="col-md-2">
+          <label for="csoName"><b>Customer Name</b></label>
+        </div>
+        <div class="col-md-10">
+          <input type="text" disabled id="fullname" name="fullname" [(ngModel)]="data1[0].fullname">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-md-2">
+          <label for="csoId4"><b>Customer Signature</b></label>
+        </div>
+        <div class="col-md-4">
+          
+          <textarea disabled rows="4"></textarea>
+        </div>
+        <div class="col-md-2">
+          <label for="csoId2"><b>Customer Thumb Print</b></label>
+        </div>
+        <div class="col-md-4">
+          
+          <textarea disabled rows="4"></textarea>
+        </div>
+      </div>
+
+
+  <div class="jkl"></div>
+  <br><br><div class="container2" style="background-position-y: center;background-size: contain; background-blend-mode: overlay; background-image: url(assets/images/logo12.png); background-repeat: no-repeat, repeat;" >
+      
+    <span *ngIf= "selectedDay === 'goldfin'">
+      <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/images/logo1.png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3></a>
+    </span>  
+    <span *ngIf= "selectedDay === 'alfalah'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 125px;text-decoration: none;" src="assets/BAFL-02-03 (1).png"><h3 style="font-size: 25px; margin-left: 40%; margin-top: -50px; ">GOLDFIN Private Limited </h3> <img style="width: 175px; height: 105px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+  <span *ngIf= "selectedDay === 'Tez'">
+    <a  style=" display: inline;"><img style="width: 195px; height: 141px;text-decoration: none;" src="assets/tez.png"><h3 style="font-size: 25px; margin-left: 40%;  margin-top: -65px; ">GOLDFIN Private Limited </h3> <img style="width: 145px; height: 90px;text-decoration: none; margin-left: 80%; margin-top: -120px;" src="assets/images/logo1.png"></a>
+  </span>
+   <br><br><br>
+  <div style="background-color:#ffc91a;height:40px;"><h4 style="font-size: 20px; color: white; margin-left: 43%; padding-top: 5px;">Loan Application Form</h4></div><br><br>
+  </div><br><br>
+      <div style="background-color:#ffc91a;height:40px;width: 235px;"><h4 style="font-size: 20px; color: white; margin-left: 10%; padding-top: 5px;">Office Work (ONLY)</h4></div><br><br>
+  
+      <div class="row">
+      <div class="col-md-2">
+        <label for="csoName"><b>CSO Name</b></label>
+      </div>
+      <div class="col-md-4" >
+        <input type="text" disabled id="csoName" name="csoName" [(ngModel)]="data1[0].csoName">
+      </div>
+      <div class="col-md-2">
+        <label for="csoId"><b>CSO Code</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" disabled id="csoId" name="csoId" [(ngModel)]="data1[0].csoId">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="csoIr4d2"><b>CSO Signature</b></label>
+      </div>
+      <div class="col-md-4">
+        
+        <textarea disabled rows="4"></textarea>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-2">
+        <label for="bsname"><b>BS Name</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" disabled id="bsname" name="bsname" [(ngModel)]="data1[0].bsName">
+      </div>
+      <div class="col-md-2">
+        <label for="cso12Id"><b>BS Code</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" disabled id="bsId" name="bsId" [(ngModel)]="data1[0].bsId">
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="csoI3d2"><b>BS Signature</b></label>
+      </div>
+      <div class="col-md-4">
+        
+        <textarea disabled rows="4"></textarea>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-2">
+        <label for="bsname"><b>BO Name</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" disabled id="boname" name="boname" [(ngModel)]="data1[0].boName">
+      </div>
+      <div class="col-md-2">
+        <label for="cso12Id"><b>BO Code</b></label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" disabled id="boId" name="boId" [(ngModel)]="data1[0].boId">
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="csoI3d2"><b>BO Signature</b></label>
+      </div>
+      <div class="col-md-4">
+        
+        <textarea disabled rows="4"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="today1"><b>Date</b></label>
+      </div>
+      <div class="col-75">
+        <input type="text" disabled id="today1" name="today1" [(ngModel)]="today1">
+      </div>
+    </div>
+    <br><br><br> <br><br><br>
+    <br><br><br> <br><br><br>
+    <br><br><br> <br><br><br>
+    <br><br><br> <br><br><br>
+  
+      </form>
+      </div>
+      
+  
+      </div>

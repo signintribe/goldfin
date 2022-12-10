@@ -1,0 +1,87 @@
+select
+{border:1px solid #f3cb00;background: transparent;padding: 7px 8px;text-indent: 1px;text-overflow: '';}
+.btn:hover{background: #ffd500;transition: 0.5s;border-radius: 0px!important;}
+.btn:focus{outline: 0!important;}
+input{outline: 0!important;}
+select:focus {border-color: #ffd500;outline: 0;}
+tr{border-bottom: 1px solid rgb(240, 237, 237);}
+.form-control:focus{color: #495057;background-color: #fff;border-color: #FFF;outline: 0;box-shadow: none!important;}
+.container-table100{
+display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;align-items: center;justify-content: center;flex-wrap: wrap;padding: 33px 30px;}
+table{border-spacing: 1;border-collapse: collapse;background: white;border-radius: 10px;overflow: hidden;width: 100%;margin: 0 auto;position: relative;}
+table * {position: relative;}
+table td, table th{padding-left: 8px;}
+table thead tr{height: 70px;background: #F3CB00;}
+table tbody tr{height: 75px;}
+table tbody tr:last-child{border: 0;}
+table td, table th{text-align: left;}
+table td.l, table th.l{text-align: right;}
+table td.c, table th.c {text-align: center;}
+table td.r, table th.r{text-align: center;}
+.table100-head th{font-family: OpenSans-Regular;color: #000;font-size: 17px;line-height: 1.2;font-weight: unset;}
+tbody tr:nth-child(even){background-color: #f5f5f5;}
+tbody tr{font-family: OpenSans-Regular;font-size: 17px;color: #000;line-height: 1.2;font-weight: unset;}
+tbody tr:hover {color: #555555;background-color: #f5f5f5;cursor: pointer;}
+.column1{padding-left: 40px;}
+
+
+@media(max-width:1440px)
+{
+.column1
+{
+min-width: 140px!important;  
+} 
+.column2
+{
+min-width: 133px!important; 
+} 
+
+.column3
+{
+min-width: 130px!important;  
+} 
+.column4
+{
+min-width: 120px!important;  
+} 
+.column5
+{
+min-width: 120px!important;  
+} 
+.column6
+{
+min-width: 120px!important;  
+} 
+.column7
+{
+min-width: 120px!important;  
+} 
+.column8
+{
+min-width: 130px!important;  
+} 
+.column9{min-width: 120px!important;} 
+.column10{min-width: 190px!important;}}
+@media(max-width:1220px){.limiter{padding-right: 31px;}}
+
+.loader {
+    border: 16px solid #efefef;
+    border-radius: 50%;
+    margin-top: 50px;
+    border-top: 16px solid #f3cb00;
+    width: 120px;
+    margin-left: 46%;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

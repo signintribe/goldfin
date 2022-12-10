@@ -1,0 +1,101 @@
+<div class="container">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-8 col-12 offset-xl-3 bg-white offset-md-3 offset-lg-4 offset-sm-2"style="padding: 23px;margin-top: 120px; background: #FFFFDD!important;">
+            <h2 style="padding: 20px 0px;">Login</h2>
+            <form action="">
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/images/icon/user(1).svg" style="width: 30px;">
+                        </div>
+                        <input class="form-control"  type="text" name="username" [(ngModel)]="data.userName" placeholder="Username/CNIC" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/images/icon/password.svg" style="width: 30px;">
+                        </div>
+                        <input class="form-control"  name="email" type="password" name="password" [(ngModel)]="data.password" placeholder="Password" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div  class="custom-control custom-checkbox">
+                                <input name="agree" [(ngModel)]="data.agree" type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group">
+                                <a href="forgot" style="color:#F3CB00; text-decoration: none; font-weight: bold; text-decoration: none;">Forgot password?</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <p style="color:tomato;float: left;" class="h5">{{error}}</p>
+                    <br>
+                    <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+                    <br>
+                </div>
+                
+                <div class="sign-button text-center">
+                    <button class="btn btn" (click)="loginUser()" style="background:#F3CB00; padding: 10px 51px;"> SIGN IN</button>
+                </div>
+                
+                <div style="display: block; text-align:center;" class="col-lg-12 col-xl-12 pb-4 input-container pt-4">
+                  <span>Not A Member? <a href="register" style="color:#F3CB00; font-weight: bold;">Sign Up</a></span>
+                </div>
+            </form>
+        </div>
+</div>
+<br><br>   <br><br> 
+
+
+
+<!-- <div class="container">
+    <br><br> 
+   <form class="text-center border border-light p-5" action="#!">
+   
+       <p class="h4 mb-4">Login</p>
+   
+       <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/user(1).svg" />
+            </div>
+        <input type="text" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="username" [(ngModel)]="data.userName" class="form-control mb-4" placeholder="Username/CNIC">
+        </div>
+       <div style="border-radius: 5px; background: #ffd500;" class="input-container">
+            <div style="padding-top: 15px; width: 4%;">
+                    <img style="width: 25px;" src="assets/images/icon/password.svg" />
+            </div>
+       <input type="password" style="border: 2px solid #ffd500;margin-bottom: 0px !important;" name="password" [(ngModel)]="data.password" class="form-control mb-4" placeholder="Password">
+        </div>
+
+       <div class="d-flex justify-content-around">
+           <div>
+               <div  class="custom-control custom-checkbox">
+                   <input name="agree" [(ngModel)]="data.agree" type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                   <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+               </div>
+           </div>
+           <div>
+               <a style="font-size:18px;" href="forgot">Forgot password?</a>
+           </div>
+       </div>
+       <br>
+       
+       <p style="color:tomato;float: left;" class="h5">{{error}}</p>
+     
+       <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+       <br>
+       <br>
+       <button class="btn btn-default" type="submit" (click)="loginUser()"><img style="width: 20px;" src="assets/images/icon/user(1).svg" />&nbsp;&nbsp;Sign in</button>
+       <br><br>
+       <p>Not a member?
+           <a style="font-size:18px;" href="register">Register</a>
+       </p>
+   </form>
+   <br><br> 
+   </div> -->

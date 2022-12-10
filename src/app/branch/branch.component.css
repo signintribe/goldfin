@@ -1,0 +1,198 @@
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 8px 12px 0px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    margin-top: -115px;
+  }
+  .container2 {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  .container {
+    width: 100%;
+    padding-right: 35px !important;
+    padding-left: 35px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media print {
+  .no-print {
+     visibility: hidden;
+  }
+}
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  @page {
+    size: A4;
+  }
+ 
+  @page{
+    margin-top: 0cm;
+    margin-bottom : 0cm;
+  }
+  @media print {
+    font-size: 16px;
+    header, footer, aside {
+        display: none !important;
+    }
+    
+    #searchbar{
+        display: none !important;
+    }
+    .top-bar{
+        display: none !important;
+    }
+    .header{
+        display: none !important;
+    }
+    .footer {
+        display: none;
+        position: fixed;
+        bottom: 0;
+      }
+    .header {
+        display: none;
+        position: fixed;
+        top: 0;
+      }
+
+      .jkl {page-break-after: always;}
+
+      .col-md-1,.col-md-2,.col-md-3,.col-md-4,
+  .col-md-5,.col-md-6,.col-md-7,.col-md-8, 
+  .col-md-9,.col-md-10,.col-md-11,.col-md-12 {
+    float: left;
+  }
+
+  .col-md-1 {
+    width: 8%;
+  }
+  .col-md-2 {
+    width: 16%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33%;
+  }
+  .col-md-5 {
+    width: 42%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58%;
+  }
+  .col-md-8 {
+    width: 66%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83%;
+  }
+  .col-md-11 {
+    width: 92%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+.myinput[type="checkbox"]:before {
+   
+    display: block;
+   
+    content: "";
+    background: blue;
+  }
+  
+  .myinput[type="checkbox"]:after {
+  
+    background: blue;
+ 
+  }
+  
+  .myinput[type="checkbox"]:checked:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+  }
+  
+  .myinput[type="checkbox"]:disabled:after {
+    -webkit-filter: opacity(0.4);
+  }
+  
+  .myinput[type="checkbox"]:not(:disabled):checked:hover:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #8BB0C2 0%, #FFF 100%);
+  }
+  
+  .myinput[type="checkbox"]:not(:disabled):hover:after {
+    background-image: linear-gradient(135deg, #8BB0C2 0%, #FFF 100%);
+    border-color: #85A9BB #92C2DA #92C2DA #85A9BB;
+  }
+  
+  .myinput[type="checkbox"]:not(:disabled):hover:before {
+    border-color: #3D7591;
+  }
+
+  
+
+input:disabled {
+  background: #ededed;
+}

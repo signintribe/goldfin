@@ -1,0 +1,532 @@
+<div class="container" style="margin-top: 80px; margin-bottom: 120px;">
+                <h1 class="text-center mb-2" style="margin-top: 67px;"><b style="color:#FFD500;">Loan </b> Application Form (LAF)</h1>
+                <div class="row">
+                        <div style="display: block;" *ngIf="data1[0].csoId && data1[0].csoName" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                                <p><b>CSO Name </b> : {{data1[0].csoName}}</p>
+                                <p><b>CSO ID </b> : {{data1[0].csoId}}</p>
+                        </div>
+                        <div style="display: block;" *ngIf="data1[0].boId && data1[0].boName" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                                <p><b>BO Name </b> : {{data1[0].boName}}</p>
+                                <p><b>BO ID </b> : {{data1[0].boId}}</p>
+                        </div>
+                        <div style="display: block;" *ngIf="data1[0].bsId && data1[0].bsName" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                                <p><b>BS Name </b> : {{data1[0].bsName}}</p>
+                                <p><b>BS ID </b> : {{data1[0].bsId}}</p>
+                        </div>
+                </div>
+                <br><br>
+                <h3 class="text-center mb-5" style="margin-top: 67px;color:#FFD500; font-weight: bold;"> Documents Uploading</h3>
+                
+                <div *ngIf="recommend">
+                        <form action="">
+                                <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                        
+                            <div class="col-lg-12 col-xl-12 pb-3 input-container">
+                            </div>
+                            <div style="display: block;" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                                <p><b>Customer Name</b> : {{data1[0].fullname}}</p>
+                                <p><b>CNIC</b> : {{data1[0].cnic}}</p>
+                            </div>
+                            <br><br>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 36px;">Front CNIC</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image" (change)="uploadImageCNIC1($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 38px;">Back CNIC</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image1" (change)="uploadImageCNIC2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px px;">Residence Utility Bills</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image2" (change)="uploadImageResidenceUtilityBills($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 11px;">Current Salary Slip</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image3" (change)="uploadImageCurrentSalarySlip($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 26px;">Job Certificate</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image4" (change)="uploadImageJobCertificate($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                            
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Experience Letter</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image5" (change)="uploadImageJobCertificate2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <!-- New Changes Start -->
+                            
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon addons1" style="width:280px;" >
+                                           <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Finance Agreement 1</p>
+                                        </div>
+                                        <input class="form-control" type="file" type="file" name="image88" (change)="uploadImageNTN($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                    </div>
+                            </div>
+        
+        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon addons1" style="width:280px;">
+                                           <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Finance Agreement 2</p>
+                                        </div>
+                                        <input class="form-control" type="file" type="file" name="image77" (change)="uploadImageSECP($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                    </div>
+                            </div>
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Facility Letter</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image101" (change)="uploadImageFacilityLetter($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;"> Loan Application 1                                    </p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image102" (change)="uploadImageLoanApp1($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;"> Loan Application 2                                    </p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image103" (change)="uploadImageLoanApp2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <!-- New Changes End -->
+                        
+                        
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                                 <button class="btn btn-lg" (click)="submitform()" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">Submit</button>
+                            </div>
+                            <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+                            
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleBs">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="bo2" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleCso">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="cso" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleVo">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="vo" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleBo">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="branchOfficer" style="color: black">Back</a>
+                                </button>
+                            </div>
+
+                            <br><br><br>
+                            <h4>Uploaded Documents : (Shows only Uploaded)</h4>
+                            <br><br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.cnicFront">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Front CNIC <br><br><a style="color:black" href="{{baseURL}}/{{data.cnicFront}}">Download and View Front CNIC</a>
+                                    <br><br><button class="btn btn-md" (click)="delDocument('cnicFront')">Delete Front CNIC</button>
+                                    </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.cnicFront}}" />
+                                    
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.cnicBack">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Back CNIC <br><br><a style="color:black" href="{{baseURL}}/{{data.cnicBack}}">Download and View Back CNIC</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument('cnicBack')">Delete Back CNIC</button>
+                                    </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;"  src="{{baseURL}}/{{data.cnicBack}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.residenceUtilityBills">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Residence Utility Bills <br><br><a style="color:black" href="{{baseURL}}/{{data.residenceUtilityBills}}">Download and View Residence Utility Bills</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument('residenceUtilityBills')">Delete Residence Utility Bills</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;"  src="{{baseURL}}/{{data.residenceUtilityBills}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.currentSalarySlip">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Current Salary Slip <br><br><a style="color:black" href="{{baseURL}}/{{data.currentSalarySlip}}">Download and View Current Salary Slip</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument('currentSalarySlip')">Delete Current Salary Slip</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;"  src="{{baseURL}}/{{data.currentSalarySlip}}" />
+                                    
+                            </div>
+                            
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.jobCertificate">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Job Certificate <br><br><a style="color:black" href="{{baseURL}}/{{data.jobCertificate}}">Download and View Job Certificate</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument('jobCertificate')">Delete Job Certificate</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.jobCertificate}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.experienceLetter">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Experience Letter <br><br><a style="color:black" href="{{baseURL}}/{{data.experienceLetter}}">Download and View Experience Letter</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument('experienceLetter')">Delete Experience Letter</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;"  src="{{baseURL}}/{{data.experienceLetter}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.NTN">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Finance Agreement 1 number, if filler <br><br><a style="color:black" href="{{baseURL}}/{{data.NTN}}">Download and View Finance Agreement 1</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('NTN')">Delete Finance Agreement 1
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.NTN}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.SECP">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Finance Agreement 2 registration, if registered <br><br><a style="color:black" href="{{baseURL}}/{{data.SECP}}">Download and View Finance Agreement 2</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('SECP')">Delete Finance Agreement 2
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.SECP}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.facilityLetter">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Facility Letter <br><br><a style="color:black" href="{{baseURL}}/{{data.facilityLetter}}">Download and View Facility Letter</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('facilityLetter')">Delete Facility Letter
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.facilityLetter}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.loanApp1">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Application 1 <br><br><a style="color:black" href="{{baseURL}}/{{data.loanApp1}}">Download and View Loan Application 1</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('loanApp1')">Delete Loan Application 1
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.loanApp1}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.loanApp2">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Application 2 <br><br><a style="color:black" href="{{baseURL}}/{{data.loanApp2}}">Download and View Loan Application 2</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('loanApp2')">Delete Loan Application 2
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.loanApp2}}" />
+                            </div> 
+
+                              </div>
+                           </form>
+                </div>
+        
+                <div *ngIf="recommend2">
+                        <form action="">
+                                <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+                        
+                            <div class="col-lg-12 col-xl-12 pb-3 input-container">
+                            </div>
+                            <div style="display: block;" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                                <p><b>Name</b> : {{data1[0].fullname}}</p>
+                                <p><b>CNIC</b> : {{data1[0].cnic}}</p>
+                            </div>
+                            <br><br>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 36px;">Front CNIC </p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image11" (change)="uploadImageCNIC11($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 38px;">Back CNIC</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image22" (change)="uploadImageCNIC22($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px px;">Residence Utility Bills</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image33" (change)="uploadImageResidenceUtilityBills11($event)"  style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 11px;">Business Utility Bills</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image44" (change)="uploadImageResidenceBusinessBills($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 26px;">Proof of Business</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image55" (change)="uploadImageProofofBusiness($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                            
+                        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Proof of Business Income</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image66" (change)="uploadImageProofofBusinessIncome($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+                            
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon addons1" style="width:280px;" >
+                                           <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Finance Agreement 1</p>
+                                        </div>
+                                        <input class="form-control" type="file" type="file" name="image88" (change)="uploadImageNTN($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                    </div>
+                            </div>
+        
+        
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                    <label class="control-label " for="email">
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon addons1" style="width:280px;">
+                                           <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Finance Agreement 2</p>
+                                        </div>
+                                        <input class="form-control" type="file" type="file" name="image77" (change)="uploadImageSECP($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                    </div>
+                            </div>
+
+                            <!-- New Changes Start -->
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;">Facility Letter</p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image101" (change)="uploadImageFacilityLetter($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;"> Loan Application 1                                    </p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image102" (change)="uploadImageLoanApp1($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                                <label class="control-label " for="email">
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-addon addons1" style="width:280px;">
+                                       <p style="position: relative; top: 8px; color: #000; padding: 0px 16px;"> Loan Application 2                                    </p>
+                                    </div>
+                                    <input class="form-control" type="file" type="file" name="image103" (change)="uploadImageLoanApp2($event)" style="padding: 15px;border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;resize: none;border-left: 1px #000!important;height: calc(2.6em + .75rem + 14px);"/>
+                                </div>
+                            </div>
+
+                            <!-- New Changes End -->
+        
+                            <p style="color:green;float: left;" class="h5">{{sucess}}</p>
+                            <br>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;">
+                                 <button class="btn btn-lg" (click)="submitform12()" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">Submit</button>
+                            </div>
+                        
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleBs">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="bo2" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleCso">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="cso" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleVo">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="vo" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-xl-12 pt-5 buttons" style="text-align: center;" *ngIf="roleBo">
+                                <button class="btn btn-lg" type="submit" style="padding: 15px;border-radius: 11px;margin: 10px;padding: 10px 96px;background: #FFD500;">
+                                    <a href="branchOfficer" style="color: black">Back</a>
+                                </button>
+                            </div>
+                            <br><br><br>
+                            <h4>Uploaded Documents : (Shows only Uploaded Documents)</h4>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.cnicFront">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Front CNIC <br><br><a style="color:black" href="{{baseURL}}/{{data.cnicFront}}">Download and View Front CNIC</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('cnicFront')">Delete Front CNIC</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.cnicFront}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.cnicBack">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Back CNIC <br><br><a style="color:black" href="{{baseURL}}/{{data.cnicBack}}">Download and View Back CNIC</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('cnicBack')">Delete Back CNIC</button>
+                                </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.cnicBack}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.residenceUtilityBills">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Residence Utility Bills <br><br><a style="color:black" href="{{baseURL}}/{{data.residenceUtilityBills}}">Download and View Residence Utility Bills</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('residenceUtilityBills')">Delete Residence Utility Bills</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.residenceUtilityBills}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.residenceBusinessBills">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Business Utility Bills <br><br><a style="color:black" href="{{baseURL}}/{{data.residenceBusinessBills}}">Download and View Business Utility Bills</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('residenceBusinessBills')">Delete Business Utility Bills</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.residenceBusinessBills}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.proofOfBusiness">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Proof of Business <br><br><a style="color:black" href="{{baseURL}}/{{data.proofOfBusiness}}">Download and View Proof of Business</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('proofOfBusiness')">Delete Proof of Business</button>
+                                </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.proofOfBusiness}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.proofOfBusinessIncome">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Proof of Business Income <br><br><a style="color:black" href="{{baseURL}}/{{data.proofOfBusinessIncome}}">Download and View Proof of Business Income</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('proofOfBusinessIncome')">Delete Proof of Business Income</button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.proofOfBusinessIncome}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.NTN">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Finance Agreement 1 number, if filler <br><br><a style="color:black" href="{{baseURL}}/{{data.NTN}}">Download and View Finance Agreement 1</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('NTN')">Delete Finance Agreement 1
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.NTN}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.SECP">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Finance Agreement 2 registration, if registered <br><br><a style="color:black" href="{{baseURL}}/{{data.SECP}}">Download and View Finance Agreement 2</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('SECP')">Delete Finance Agreement 2
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.SECP}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.NTN">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Facility Letter <br><br><a style="color:black" href="{{baseURL}}/{{data.facilityLetter}}">Download and View Facility Letter</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('facilityLetter')">Delete Facility Letter
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.facilityLetter}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.NTN">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Application 1 <br><br><a style="color:black" href="{{baseURL}}/{{data.loanApp1}}">Download and View Loan Application 1</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('loanApp1')">Delete Loan Application 1
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.loanApp1}}" />
+                            </div>
+                            <br>
+                            <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="data.NTN">
+                                    <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Loan Application 2 <br><br><a style="color:black" href="{{baseURL}}/{{data.loanApp2}}">Download and View Loan Application 2</a>
+                                        <br><br><button class="btn btn-md" (click)="delDocument1('loanApp2')">Delete Loan Application 2
+                                        </button>
+                                        </p>
+                                    <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data.loanApp2}}" />
+                            </div>                    
+                            </div>
+                           </form>
+                </div>
+                <br><br>
+                
+</div>

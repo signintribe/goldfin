@@ -1,0 +1,193 @@
+<div *ngIf="salary" class="container">
+        <br><br>   <!-- Default form login -->
+       <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">Loan Application Form (LAF)</p>
+            <br>
+           
+        </form>
+      <div class="border border-light p-5">
+        <p>Name : <b>{{this.data1[0].fullname}}</b></p>
+        <p>CNIC : <b>{{this.data1[0].cnic}}</b></p>
+        <p>Purpose of Loan : <b>{{this.data.purpose}}</b></p>
+        <p>City : <b>{{this.data.city}}</b></p>
+        <p>Date of Birth : <b>{{this.data.dob}}</b></p>
+        <p>Current Address :  <b>{{this.data.currentaddress}}</b></p>
+        <p>Residential status : <b>{{this.data.residentialstatus}}</b></p>
+        <p>Residing since : <b>{{this.data.residingsince}}</b></p>
+        <p>Permanent Address : <b>{{this.data.permanentaddress}}</b></p>
+        <p>Other Mobile numbe : <b>{{this.data.othermobilenum}}</b></p>
+        <p>Landline : <b>{{this.data.landline}}</b></p>
+        <p>Gender : <b>{{this.data.gender}}</b></p>
+        <p>Marital Status : <b>{{this.data.maritalstatus}}</b></p>
+        <p>Education : <b>{{this.data.education}}</b></p>
+        <p>Loan Amount : <b>{{this.data.loanAmount}}</b></p>
+        <p>Profession : <b>{{this.data.profession}}</b></p>
+        <p>Designation : <b>{{this.data.designation}}</b></p>
+        <p>Employer Name : <b>{{this.data.empname}}</b></p>
+        <p>Employer Address : <b>{{this.data.empaddress}}</b></p>
+        <p>Phone : <b>{{this.data.phone}}</b></p>
+        <p>Website : <b>{{this.data.website}}</b></p>
+        <p>Job Status : <b>{{this.data.jobstatus}}</b></p>
+        <p>Date of Joining : <b>{{this.data.dateofjoining}}</b></p>
+        <p>Total Working Experience, inclusive of current job : <b>{{this.data.totalexp}}</b></p>
+        <p>Current Gross Salary : <b>{{this.data.grosssalary}}</b></p>
+        <p>Current Net Salary : <b>{{this.data.netsalary}}</b></p>
+        <p>Do you have any outstanding loans : <b>{{this.data.outstandingloan}}</b></p>
+        <p>Do you have any outstanding loans : <b>{{this.data.sourceofloan}}</b></p>
+        <p>Do you have any outstanding loans : <b>{{this.data.loanamount}}</b></p>
+        
+      </div>
+        <p style="float: left;" class="h6 mb-4">Average monthly house hold expenses</p>
+        <br>
+        <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+                <tr>
+                  <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Expenses Details</th>
+                  <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Average monthly expenses</th>
+                </tr>
+                <tr>
+                  <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">House hold</td>
+                  <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text"  name="household" class="form-control mb-4" placeholder="{{this.data.household}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">House rent</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="houserent" class="form-control mb-4" placeholder="{{this.data.houserent}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Utility Bills</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="utilitybill" class="form-control mb-4" placeholder="{{this.data.utilitybill}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Children Education</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="childeducation" class="form-control mb-4" placeholder="{{this.data.childeducation}}" disabled></td>
+                </tr>
+
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Medical</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text"  name="medical" class="form-control mb-4" placeholder="{{this.data.medical}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Committee (ROSCA)/ Saving</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="committe" class="form-control mb-4" placeholder="{{this.data.committe}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Loan Installment</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="loaninstallment" class="form-control mb-4" placeholder="{{this.data.loaninstallment}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Misc</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="other0" class="form-control mb-4" placeholder="{{this.data.other0}}" disabled></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Total Expenses</td>
+                    <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{this.data1[0].cnic}}</td>
+                </tr>
+
+        </table>
+        <br>
+</div>
+<div *ngIf="!salary" class="container">
+    <br><br>   <!-- Default form login -->
+   <form class="text-center border border-light p-5" action="#!">
+   
+       <p class="h4 mb-4">Loan Application Form (LAF)</p>
+        <br>
+       
+    </form>
+  <div class="border border-light p-5">
+    <p>Name : <b>{{this.data1[0].fullname}}</b></p>
+    <p>CNIC : <b>{{this.data1[0].cnic}}</b></p>
+    <p>Purpose of Loan : <b>{{this.data.purpose}}</b></p>
+    <p>City : <b>{{this.data.city}}</b></p>
+    <p>Date of Birth : <b>{{this.data.dob}}</b></p>
+    <p>Current Address :  <b>{{this.data.currentaddress}}</b></p>
+    <p>Residential status : <b>{{this.data.residentialstatus}}</b></p>
+    <p>Residing since : <b>{{this.data.residingsince}}</b></p>
+    <p>Permanent Address : <b>{{this.data.permanentaddress}}</b></p>
+    <p>Other Mobile numbe : <b>{{this.data.othermobilenum}}</b></p>
+    <p>Landline : <b>{{this.data.landline}}</b></p>
+    <p>Gender : <b>{{this.data.gender}}</b></p>
+    <p>Marital Status : <b>{{this.data.maritalstatus}}</b></p>
+    <p>Education : <b>{{this.data.education}}</b></p>
+    <p>Loan Amount : <b>{{this.data.loanAmount}}</b></p>
+    <p>Bussiness Name : <b>{{this.data.bussinessname}}</b></p>
+    <p>Business Status : <b>{{this.data.businessStatus}}</b></p>
+    <p>Bussiness Address : <b>{{this.data.bussinessaddress}}</b></p>
+    <p>Bussiness Landline : <b>{{this.data.bussinesslandline}}</b></p>
+    <p>Bussiness Website : <b>{{this.data.bussinesswebsite}}</b></p>
+    <p>Bussiness Own Status : {{this.data.bussinessOwnstatus}}</p>
+    <p>Nature of Business : <b>{{this.data.natureofbusiness}}</b></p>
+    <p>Company Name : <b>{{this.data.companyname}}</b></p>
+    <p>Establish Since : <b>{{this.data.establishsince}}</b></p>
+    <p>SECP : <b>{{this.data.secp}}</b></p>
+    <p>Date of Registration : <b>{{this.data.dateofreg}}</b></p>
+    <p>NTN Number : <b>{{this.data.ntn}}</b></p>
+    <p>Number of Employees : <b>{{this.data.nbrofemp}}</b></p>
+    <h3><b>Agriculturist</b> </h3><br>
+    <p>Working : <b>{{this.data.working}}</b></p>
+    <p>Own Land : <b>{{this.data.ownland}}</b></p>
+    <p>Rented Land : <b>{{this.data.rentedland}}</b></p>
+    <p>Cultivating : <b>{{this.data.cultivating}}</b></p>
+    <p>Main Crops : <b>{{this.data.maincrops}}</b></p>
+    <p>Animals : <b>{{this.data.animals}}</b></p>
+    <p>Average Month Business Expenses : <b>{{this.data.averagemonthbusinessexp}}</b></p>
+    <p>Average Month Turn Over : <b>{{this.data.avgmonthturnover}}</b></p>
+    <p>Monthly Income : <b>{{this.data.monthlyincome}}</b></p>
+    <p>Other Source of Income : <b>{{this.data.otherincome}}</b></p>
+    <p>Monthly Accounts : <b>{{this.data.monthlyaccounts}}</b></p>
+    <p>Outstanding Loan 1 : <b>{{this.data.outstandingloan1}}</b></p>
+    <p>Source of Loan 1 : <b>{{this.data.sourceofloan1}}</b></p>
+    <p>Outstanding Loan 2 : <b>{{this.data.outstandingloan2}}</b></p>
+    <p>Source of Loan 2 : <b>{{this.data.sourceofloan2}}</b></p>
+    <p>Loan Amount 2 : <b>{{this.data.loanamount2}}</b></p>
+  </div>
+    <p style="float: left;" class="h6 mb-4">Average monthly house hold expenses</p>
+    <br>
+    <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+            <tr>
+              <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Expenses Details</th>
+              <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Average monthly expenses</th>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">House hold</td>
+              <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text"  name="household" class="form-control mb-4" placeholder="{{this.data.household1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">House rent</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="houserent" class="form-control mb-4" placeholder="{{this.data.houserent1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Utility Bills</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="utilitybill" class="form-control mb-4" placeholder="{{this.data.utilitybills1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Children Education</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="childeducation" class="form-control mb-4" placeholder="{{this.data.childeducation1}}" disabled></td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Medical</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text"  name="medical" class="form-control mb-4" placeholder="{{this.data.medical1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Committee (ROSCA)/ Saving</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="committe" class="form-control mb-4" placeholder="{{this.data.committee1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Loan Installment</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="loaninstallment" class="form-control mb-4" placeholder="{{this.data.loaninstallment1}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Misc</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><input style="border: 2px solid #ffc107;background-color:transparent;" type="text" name="other0" class="form-control mb-4" placeholder="{{this.data.other3}}" disabled></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Total Expenses</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{this.data.cnic}}</td>
+            </tr>
+
+    </table>
+    <br>
+</div>
+
+<br><br>

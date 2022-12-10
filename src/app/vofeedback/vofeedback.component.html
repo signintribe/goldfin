@@ -1,0 +1,266 @@
+<div *ngIf="!trustvo" class="container">
+        <div class="container ">
+                <h4 class="text-center h4 mb-4" style="margin-top: 67px;"><b style="color:#FFD500;">Verification Form</b> Feedback</h4>
+            </div>
+                
+              <div class="container" style="margin-top: 0px; margin-bottom: 120px;">
+                    <div class="col-lg-10 col-xl-10 col-md-10 col-10 offset-1 offset-lg-1 offset-xl-1 offset-sm-0 col-sm-12  offset-md-1 row" id="form-div" style=" padding: 40px 1px; background: #FFFFDD; border: 1px solid #ffffb73d;border: 1px solid #ffff00;border-radius: 10px;">
+            
+                        <div style="display: block;" class="text-center col-lg-12 col-xl-12 pb-3 input-container">
+                            <p><b>Name</b> : {{data3.fullname}}</p>
+                            <p><b>CNIC</b> : {{data3.cnic}}</p>
+                            <p><b>Residential Address</b> : {{data2.currentaddress}}</p>
+                            <p><b>Loan Amount</b> : {{data2.desiredLoanAmount}}</p>
+                        </div>
+            
+            
+            
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                      Personal Information (Positive/Negative As per LAF):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/media/icons/persnol-.svg" style="width: 34px;">
+                        </div>
+
+                        <textarea rows="3" disabled id="personalInformation" name="personalInformation" [(ngModel)]="data1[0].personalInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+                        <!-- <input class="form-control" disabled name="personalInformation" [(ngModel)]="data1[0].personalInformation" type="text" placeholder="Personal Information (Positive/Negative As per LAF)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                     -->
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                     Professional Information (Positive/Negative As per LAF):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/professional-inform.png" style="width: 34px;">
+                        </div>
+
+
+                         <textarea rows="3" disabled id="professionalInformation" name="professionalInformation" [(ngModel)]="data1[0].professionalInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="professionalInformation" type="text" [(ngModel)]="data1[0].professionalInformation" placeholder=" Professional Information (Positive/Negative As per LAF)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                     -->
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                      Financial Information(Positive/Negative As per LAF):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/financial-inform.svg" style="width: 34px;">
+                        </div>
+                        <textarea rows="3" disabled id="financialInformation" name="financialInformation" [(ngModel)]="data1[0].financialInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="financialInformation" type="text" [(ngModel)]="data1[0].financialInformation" placeholder="Financial Information (Positive/Negative As per LAF)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+            
+            
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                      Neighbor Check- Residence(Positive/Negative):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/neighbar-icon.svg" style="width: 34px;">
+                        </div>
+                        
+                        <textarea rows="3" disabled id="neighborcheck_residence" name="neighborcheck_residence" [(ngModel)]="data1[0].neighborcheck_residence" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="neighborcheck_residence" type="text" [(ngModel)]="data1[0].neighborcheck_residence" placeholder="Neighbor Check- Residence(Positive/Negative)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                        Neighbor Check- Business(Positive/Negative):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/business-neighbar.svg" style="width: 34px;">
+                        </div>
+
+                        <textarea rows="3" disabled id="neighborcheck_business" name="neighborcheck_business" [(ngModel)]="data1[0].neighborcheck_business" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="neighborcheck_business" [(ngModel)]="data1[0].neighborcheck_business" type="text" placeholder="Neighbor Check- Business(Positive/Negative):" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+              
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-3 input-container">
+                    <label class="control-label " for="email">
+                      If Negative give reason:
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/negative.png" style="width: 34px;">
+                        </div>
+                        <textarea rows="3" disabled id="negative_reason" name="negative_reason" [(ngModel)]="data1[0].negative_reason" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="negative_reason" type="text" [(ngModel)]="data1[0].negative_reason" placeholder="If Negative give reason" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-12 ">
+                <h4 class="mt-2 mb-3">Additional Remarks</h4>
+                </div>
+            
+                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                    <label class="control-label " for="email">
+                     Personal Information:
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/persnol-.svg" style="width: 34px;">
+                        </div>
+
+                        <textarea rows="3" disabled id="remarks_personalInformation" name="remarks_personalInformation" [(ngModel)]="data1[0].remarks_personalInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="remarks_personalInformation" type="text" [(ngModel)]="data1[0].remarks_personalInformation" placeholder="Personal Information" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    -->
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                    <label class="control-label " for="email">
+                     Professional Information:
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/professional-inform.png" style="width: 34px;">
+                        </div>
+                        <textarea rows="3" disabled id="remarks_professionalInformation" name="remarks_professionalInformation" [(ngModel)]="data1[0].remarks_professionalInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="remarks_professionalInformation" type="text" [(ngModel)]="data1[0].remarks_professionalInformation" placeholder="Professional Information" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                    <label class="control-label " for="email">
+                     Financial Information:
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/financial-inform.svg" style="width: 34px;">
+                        </div>
+
+                        <textarea rows="3" disabled id="remarks_financialInformation" name="remarks_financialInformation" [(ngModel)]="data1[0].remarks_financialInformation" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+                        <!-- <input class="form-control" disabled name="remarks_financialInformation" type="text" [(ngModel)]="data1[0].remarks_financialInformation" placeholder="Financial Information" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" /> -->
+
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                    <label class="control-label " for="email">
+                     Verification Result(Positive/Negative):
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="./assets/media/icons/verification.svg" style="width: 34px;">
+                        </div>
+                        <!-- <input class="form-control" disabled name="verificationResults" type="text" [(ngModel)]="data1[0].verificationResults"  placeholder=" Verification Result(Positive/Negative)" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                     -->
+                        <textarea rows="3" disabled id="verificationResults" name="verificationResults" [(ngModel)]="data1[0].verificationResults" class="form-control" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;"></textarea>
+
+
+                    </div>
+                </div>
+               
+                <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                           VO Name :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/icons/name-icon.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="text" name="name" [(ngModel)]="data1[0].name" placeholder="Name" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+                    <div style="display: block;" class="col-lg-6 col-xl-6 pb-3 input-container">
+                        <label class="control-label " for="email">
+                                VO Code :
+                        </label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            <img src="./assets/media/icons/user-code.svg" style="width: 34px;">
+                            </div>
+                            <input class="form-control" type="text" name="VOId" [(ngModel)]="data1[0].userCode" placeholder="VO Code" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                        </div>
+                    </div>
+            
+            
+              
+                <p class="col-lg-12" *ngIf="showPic1 == true || showPic2 == true"><b>If Uploaded Pictures</b></p>
+                <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="showPic1 == true">
+                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Picture 1 : <br><br><a style="color:black" href="{{baseURL}}/{{data1[0].picture1}}">Download and View Picture 1</a></p>
+                        <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data1[0].picture1}}" />
+                </div>
+                <br>
+                <div class="col-lg-12" style="display: flex; width: 100%; margin-bottom: 15px;" *ngIf="showPic2 == true">
+                        <p style="height: calc(1.5em + .75rem + 7px);background: #00000029; padding: 9px; min-width: 35%; color: black;">Picture 2 : <br><br><a style="color:black" href="{{baseURL}}/{{data1[0].picture2}}">Download and View Picture 2</a></p>
+                        <img style="margin-left: 60px; width: 258px; height: 135px;" src="{{baseURL}}/{{data1[0].picture2}}" />
+                </div>
+                
+                <div class="col-lg-12" *ngIf="showPic1 == false && showPic2 == false">
+                        <p class="col-lg-12" ><b>No Uploaded Pictures</b></p>
+                </div>
+            
+          
+            
+                  </div>
+            </div>
+</div>
+
+<div *ngIf="trustvo" class="container">
+        <br><br> 
+       <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">Verification Officer Feedback - VO</p>
+            <br>
+           
+        </form>
+    <div class="border border-light p-5">
+        <h3>{{record}}</h3>
+    </div>
+</div>
+
+
+
+<!-- <div *ngIf="!trustvo" class="container">
+        <br><br>  
+       <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">Verification Officer Feedback - VO</p>
+        </form>
+    <div class="border border-light p-5">
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Personal Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].personalInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Professional Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].professionalInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Financial Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].financialInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Neighbor Check Residence : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].neighborcheck_residence}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Neighbor Check Business : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].neighborcheck_business}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">If any Negative Reason : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].negative_reason}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Remarks Personal Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].remarks_personalInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Remarks Professional Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].remarks_professionalInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Remarks Financial Information : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].remarks_financialInformation}}</b></p>
+        <p style="border: 2px solid #ffd500;padding-top:12px;"  class="form-control mb-4">Verification Results : &nbsp;&nbsp;&nbsp;<b>{{this.data1[0].verificationResults}}</b></p>
+    </div>
+</div>
+
+
+<div *ngIf="trustvo" class="container">
+        <br><br>   
+       <form class="text-center border border-light p-5" action="#!">
+       
+           <p class="h4 mb-4">Verification Officer Feedback - VO</p>
+            <br>
+           
+        </form>
+    <div class="border border-light p-5">
+        <h3>{{record}}</h3>
+    </div>
+</div> -->

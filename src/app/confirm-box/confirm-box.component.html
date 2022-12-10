@@ -1,0 +1,8 @@
+<h1  mat-dialog-title>Confirm For Delete</h1>
+    <mat-dialog-content>
+        <label>Are you Sure to Delete this User : {{data.fullname}} ?</label>
+    </mat-dialog-content>
+<mat-dialog-actions>
+    <button  mat-raised-button (click)="closeMe('Cancel')">Cancel</button>
+    <button  mat-raised-button (click)="closeMe('Submit')">Delete</button>
+</mat-dialog-actions>

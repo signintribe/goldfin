@@ -1,0 +1,36 @@
+<h1  mat-dialog-title>Update Files</h1>
+    <mat-dialog-content>
+        <table style="overflow-x:auto;">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>CNIC</th>
+                <th>Profession</th>
+                <th>Loan Status</th>
+                <th>Source</th>
+            </tr>
+            <tr *ngFor="let event of data; let i = index;">
+                <td>
+                    {{i+1}}
+                </td>
+                <td>
+                    {{event.fullname}}
+                </td>
+                <td>
+                    {{event.cnic}}
+                </td>
+                <td>
+                    {{event.profession}}
+                </td>
+                <td>
+                    {{event.loanStatus}}
+                </td>
+                <td>
+                    {{event.source}}
+                </td>
+            </tr>
+        </table>
+    </mat-dialog-content>
+<mat-dialog-actions>
+    <button  mat-raised-button (click)="closeMe('Cancel')">Ok</button>
+</mat-dialog-actions>

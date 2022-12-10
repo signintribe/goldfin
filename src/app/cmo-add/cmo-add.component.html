@@ -1,0 +1,42 @@
+<div class="container">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-sm-10 col-md-8 col-12 offset-xl-3 bg-white offset-md-2 offset-lg-3 offset-sm-1"style="padding: 23px;margin-top: 120px;  background: #FFFFDD!important;">
+            <h2 style="padding: 20px 0px;">Add User</h2>
+            <form action="">
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/images/icon/user.svg" style="width: 30px;">
+                        </div>
+                        <input class="form-control"  name="fullname" type="text" [(ngModel)]="data.fullname" placeholder="Full Name" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/images/icon/cnic.svg" style="width: 30px;">
+                        </div>
+                        <input class="form-control"  name="cnic" type="text" (keyup)="onKeyCNIC($event)" [(ngModel)]="data.cnic" maxlength="15" placeholder="CNIC : XXXXX-XXXXXXX-X" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    </div>
+                </div>
+                <div style="display: block;" class="col-lg-12 col-xl-12 pb-4 input-container">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                        <img src="assets/images/icon/address.vg.svg" style="width: 30px;">
+                        </div>
+                        <input class="form-control"  name="address" type="text" [(ngModel)]="data.address" placeholder="Resedential Address" style="border: 2px solid #808080!important;border-top-left-radius:0px!important;border-bottom-left-radius:0px!important;padding: 19px 30px;resize: none;border-left: 1px #000!important;" />
+                    </div>
+                </div>
+                <br>
+                <p style="color:red;padding-bottom: 10px;float: left;" class="h5">{{error}}</p>
+                <br>
+                <p style="color:green;padding-bottom: 10px;float: left;" class="h5">{{sucess}}</p>
+                <br>
+                <div class="sign-button text-center">
+                    <button class="btn btn" (click)="submit()" style="background:#F3CB00; padding: 10px 51px;">Add User</button>
+                </div>
+                
+                
+            </form>
+        </div>
+    </div> 
+    <br><br>
