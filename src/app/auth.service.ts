@@ -7,8 +7,8 @@ import {Router, Route} from '@angular/router';
 })
 export class AuthService {
   //private _baseUrl = "http://134.209.144.186:3000"
-  private _baseUrl = "http://localhost:3000"
-  //private _baseUrl = "https://api.goldfin.com.pk"
+  //private _baseUrl = "http://localhost:3000"
+  private _baseUrl = "https://api.goldfin.com.pk"
 
   constructor(private http: HttpClient, private _router : Router) { }
   registerUser(user){
